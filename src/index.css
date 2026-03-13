@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 90% 66%;
+    --foreground: 0 0% 10%;
+    --card: 45 100% 95%;
+    --card-foreground: 0 0% 10%;
+    --popover: 45 100% 95%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 63% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 45 40% 85%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 200 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 75% 55%;
+    --radius: 0.75rem;
+
+    --comic-yellow: 45 90% 66%;
+    --comic-red: 0 75% 55%;
+    --comic-green: 145 63% 42%;
+    --comic-blue: 200 80% 55%;
+    --comic-orange: 30 90% 55%;
+    --comic-purple: 270 60% 55%;
+
+    --sidebar-background: 45 100% 95%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 40% 85%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 0 75% 55%;
+  }
+
+  .dark {
+    --background: 230 20% 12%;
+    --foreground: 45 90% 90%;
+    --card: 230 20% 18%;
+    --card-foreground: 45 90% 90%;
+    --popover: 230 20% 18%;
+    --popover-foreground: 45 90% 90%;
+    --primary: 0 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 63% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 230 15% 25%;
+    --muted-foreground: 45 20% 65%;
+    --accent: 200 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 50% 50%;
+    --input: 45 50% 50%;
+    --ring: 0 75% 55%;
+
+    --sidebar-background: 230 20% 15%;
+    --sidebar-foreground: 45 90% 90%;
+    --sidebar-primary: 0 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 15% 22%;
+    --sidebar-accent-foreground: 45 90% 90%;
+    --sidebar-border: 45 50% 50%;
+    --sidebar-ring: 0 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Comic Neue', cursive, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .comic-card {
+    @apply bg-card rounded-xl p-6 relative;
+    border: 3px solid hsl(var(--border));
+    box-shadow: 6px 6px 0px hsl(var(--border));
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .comic-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px hsl(var(--border));
+  }
+
+  .comic-btn {
+    @apply font-bold rounded-lg px-6 py-3 uppercase tracking-wider;
+    font-family: 'Bangers', cursive;
+    border: 3px solid hsl(var(--border));
+    box-shadow: 4px 4px 0px hsl(var(--border));
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .comic-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px hsl(var(--border));
+  }
+
+  .comic-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(var(--border));
+  }
+
+  .comic-input {
+    @apply w-full rounded-lg px-4 py-3 bg-card text-foreground font-bold;
+    border: 3px solid hsl(var(--border));
+    box-shadow: 4px 4px 0px hsl(var(--border));
+    font-family: 'Comic Neue', cursive;
+  }
+
+  .comic-input:focus {
+    outline: none;
+    box-shadow: 4px 4px 0px hsl(var(--comic-red));
+  }
+
+  .comic-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-bold uppercase;
+    border: 2px solid hsl(var(--border));
+    font-family: 'Bangers', cursive;
+  }
+
+  .comic-tab {
+    @apply px-5 py-2 font-bold rounded-t-lg cursor-pointer transition-colors;
+    font-family: 'Bangers', cursive;
+    border: 3px solid hsl(var(--border));
+    border-bottom: none;
+    letter-spacing: 0.05em;
+  }
+
+  .comic-tab-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .comic-tab-inactive {
+    @apply bg-muted text-muted-foreground hover:bg-card;
+  }
+
+  .comic-progress-track {
+    @apply w-full h-5 rounded-full overflow-hidden;
+    border: 2px solid hsl(var(--border));
+    background: hsl(var(--muted));
+  }
+
+  .comic-progress-bar {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+    background: linear-gradient(90deg, hsl(var(--comic-green)), hsl(145 63% 52%));
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .comic-score {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(1.2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .comic-heading {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.08em;
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-count-up {
+  animation: count-up 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

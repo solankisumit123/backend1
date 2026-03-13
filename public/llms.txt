@@ -1,0 +1,33 @@
+# WebInsight Pro
+
+> WebInsight Pro is a comprehensive suite of 70+ free online tools for SEO analysis, everyday calculations, web development, and digital marketing.
+
+## About
+
+WebInsight Pro provides free, browser-based tools that require no signup or installation. Our tools cover SEO auditing, traffic analysis, calculators, text utilities, image tools, developer tools, and more.
+
+## Tools
+
+- [SEO Audit](https://webinsightpro.site/tools/seo-audit): Full website SEO analysis
+- [Page Speed](https://webinsightpro.site/tools/page-speed): Desktop and mobile speed scores
+- [Meta Tag Generator](https://webinsightpro.site/tools/meta-tags): Generate OG and Twitter meta tags
+- [Keyword Density](https://webinsightpro.site/tools/keyword-density): Analyze keyword usage in content
+- [Word Counter](https://webinsightpro.site/tools/word-counter): Count words, characters, sentences
+- [QR Code Generator](https://webinsightpro.site/tools/qr-code): Create QR codes instantly
+- [Password Generator](https://webinsightpro.site/tools/password): Generate strong secure passwords
+- [JSON Formatter](https://webinsightpro.site/tools/json): Beautify and minify JSON data
+- [Age Calculator](https://webinsightpro.site/tools/age-calculator): Calculate exact age from date of birth
+- [BMI Calculator](https://webinsightpro.site/tools/bmi-calculator): Body Mass Index and health status
+- [EMI Calculator](https://webinsightpro.site/tools/emi-calculator): Home, car and personal loan EMI
+- [GST Calculator](https://webinsightpro.site/tools/gst-calculator): Add or remove GST tax instantly
+- [Income Tax Calculator](https://webinsightpro.site/tools/income-tax): Old vs new tax regime comparison
+- [Currency Converter](https://webinsightpro.site/tools/currency-converter): Real time exchange rate conversion
+- [Discount Calculator](https://webinsightpro.site/tools/discount-calculator): Calculate savings and sale price
+- [TDEE Calculator](https://webinsightpro.site/tools/tdee-calculator): Total daily energy expenditure
+- [CSS Gradient Generator](https://webinsightpro.site/tools/css-gradient): Visual CSS gradient builder
+- [Color Palette Generator](https://webinsightpro.site/tools/color-palette): Generate harmonious color palettes
+
+## Contact
+
+- Website: https://webinsightpro.site
+- Tools Directory: https://webinsightpro.site/tools
