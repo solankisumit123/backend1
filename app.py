@@ -28,8 +28,12 @@ def get_info():
     ydl_opts = {
         'quiet': True,
         'no_warnings': True,
-        'format': 'best[ext=mp4]/best', # Prefer mp4 for web compatibility
+        'format': 'best[ext=mp4]/best', 
         'skip_download': True,
+        'extract_flat': True,
+        'youtube_include_dash_manifest': False,
+        'youtube_include_hls_manifest': False,
+        'nocheckcertificate': True,
     }
     
     try:
