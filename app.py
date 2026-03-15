@@ -33,10 +33,11 @@ def get_info():
         'no_warnings': True,
         'format': 'best',
         'skip_download': True,
-        'extract_flat': True,
+        'extract_flat': False, # Must be False to get format URLs
         'youtube_include_dash_manifest': False,
         'youtube_include_hls_manifest': False,
         'nocheckcertificate': True,
+        'no_playlist': True,
     }
     
     try:
