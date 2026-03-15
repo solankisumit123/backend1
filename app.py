@@ -56,18 +56,32 @@ def get_info():
                         "acodec": f.get('acodec')
                     })
 
-            # Sort by resolution (height)
-            formats_processed.sort(key=lambda x: int(x['resolution'].replace('p','')) if 'p' in x['resolution'] and x['resolution'].replace('p','').isdigit() else 0, reverse=True)
+            # Find a suitable preview URL (first combined format or best available)
+            preview_url = None
+            for f in info.get('formats', []):
+                if f.get('vcodec') != 'none' and f.get('acodec') != 'none':
+                    preview_url = f.get('url')
+                    break
+            if not preview_url:
+                preview_url = info.get('url')
 
-            base_url = f"{request.scheme}://{request.host}"
+            # Build Proxy URLs
+            # Using request.host_url which includes scheme and port automatically
+            base_url = request.host_url.rstrip('/')
+            
             thumbnail = info.get('thumbnail')
             if thumbnail:
                 thumbnail = f"{base_url}/proxy?url={encode_param(thumbnail)}"
+            
+            proxied_preview = None
+            if preview_url:
+                proxied_preview = f"{base_url}/proxy?url={encode_param(preview_url)}"
             
             return jsonify({
                 "title": info.get('title'),
                 "author": info.get('uploader'),
                 "thumbnail": thumbnail,
+                "preview_url": proxied_preview, # Restored for frontend preview
                 "duration": info.get('duration'),
                 "webpage_url": info.get('webpage_url'),
                 "formats": formats_processed[:15]
