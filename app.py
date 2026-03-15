@@ -34,8 +34,8 @@ def get_info():
         'format': 'best',
         'skip_download': True,
         'extract_flat': False,
-        'youtube_include_dash_manifest': True, # Enabled for better compatibility
-        'youtube_include_hls_manifest': True,  # Enabled for live streams
+        'youtube_include_dash_manifest': True,
+        'youtube_include_hls_manifest': True,
         'nocheckcertificate': True,
         'no_playlist': True,
     }
@@ -47,20 +47,22 @@ def get_info():
                 return jsonify({"error": "No information found for this URL"}), 404
             
             formats_processed = []
-            formats = info.get('formats', [])
+            formats = info.get('formats', []) or []
             
             for f in formats:
-                # We prioritize combined formats (video + audio)
-                has_video = f.get('vcodec') != 'none'
-                has_audio = f.get('acodec') != 'none'
+                # Prioritize combined formats
+                f_vcodec = f.get('vcodec') or 'none'
+                f_acodec = f.get('acodec') or 'none'
                 
-                if has_video and has_audio:
+                if f_vcodec != 'none' and f_acodec != 'none':
+                    height = f.get('height') or 0
                     formats_processed.append({
-                        "format_id": f.get('format_id'),
-                        "ext": f.get('ext'),
-                        "resolution": f.get('resolution') or f"{f.get('height', 'unknown')}p",
+                        "format_id": f.get('format_id') or 'unknown',
+                        "ext": f.get('ext') or 'mp4',
+                        "resolution": f"{height}p" if height else (f.get('resolution') or "unknown"),
                         "filesize": f.get('filesize'),
-                        "url": f.get('url')
+                        "url": f.get('url'),
+                        "height": height
                     })
 
             # Base URL for proxying
@@ -69,19 +71,20 @@ def get_info():
             # Find a preview URL (use best combined format)
             preview_raw = None
             if formats_processed:
-                # Use the highest resolution combined format for preview
-                sorted_formats = sorted(formats_processed, key=lambda x: int(x['resolution'].replace('p','')) if 'p' in x['resolution'] and x['resolution'].replace('p','').isdigit() else 0, reverse=True)
-                preview_raw = sorted_formats[0].get('url')
+                # Safe sort
+                formats_processed.sort(key=lambda x: x.get('height') or 0, reverse=True)
+                preview_raw = formats_processed[0].get('url')
             
             if not preview_raw:
                 preview_raw = info.get('url')
 
-            # Build Proxied URLs (Crucial: check for None to avoid crash)
+            # Build Proxied URLs
             thumbnail = info.get('thumbnail')
             proxied_thumbnail = f"{base_url}/proxy?url={encode_param(thumbnail)}" if thumbnail else None
             proxied_preview = f"{base_url}/proxy?url={encode_param(preview_raw)}" if preview_raw else None
             
             return jsonify({
+                "status": "success",
                 "title": info.get('title') or "Video",
                 "author": info.get('uploader') or "Creator",
                 "thumbnail": proxied_thumbnail,
@@ -92,7 +95,13 @@ def get_info():
             })
     except Exception as e:
         logger.error(f"Extraction failure: {str(e)}")
-        return jsonify({"error": f"Failed to extract video info: {str(e)}"}), 500
+        import traceback
+        error_details = traceback.format_exc()
+        return jsonify({
+            "status": "error",
+            "error": str(e),
+            "details": error_details if app.debug else "Internal Server Error"
+        }), 500
 
 @app.route('/proxy', methods=['GET'])
 def proxy_media():
@@ -170,4 +179,4 @@ def download():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     # Note: Use '0.0.0.0' for deployment
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=True)
