@@ -49,7 +49,7 @@ const InstagramVideoDownloader = () => {
             setEngineStatus("online");
         } catch (err) {
             console.error("Master Engine error:", err);
-            setError("Handshake failed. Ensure the Local Master Engine is running.");
+            setError("Connection failed. Master Engine is currently unreachable.");
             setEngineStatus("offline");
         } finally {
             setLoading(false);

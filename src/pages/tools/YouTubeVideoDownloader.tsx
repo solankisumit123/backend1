@@ -48,7 +48,7 @@ const YouTubeVideoDownloader = () => {
             setEngineStatus("online");
         } catch (err) {
             console.error("Master Engine error:", err);
-            setError("Handshake failed. Ensure the Local Master Engine is running.");
+            setError("Connection failed. Master Engine is currently unreachable.");
             setEngineStatus("offline");
         } finally {
             setLoading(false);
@@ -94,7 +94,7 @@ const YouTubeVideoDownloader = () => {
                 }, 1000);
             }, 2500);
         } catch (err: unknown) {
-            setError("Local Master Engine error. Please check your connection.");
+            setError("Download service unavailable. Please try again later.");
             setDownloading(false);
             setProgress(0);
         }
