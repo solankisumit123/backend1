@@ -14,8 +14,9 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app) # Enable CORS for React frontend
 
-# Path to the video-downloader-master if we need to import items (optional)
-# sys.path.append(os.path.join(os.getcwd(), 'video-downloader-master', 'src'))
+@app.route('/', methods=['GET'])
+def home():
+    return "VIDEO MASTER ENGINE IS RUNNING! 🚀"
 
 @app.route('/info', methods=['GET'])
 def get_info():
