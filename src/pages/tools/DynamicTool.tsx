@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Play, AlertCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
-import AdBanner from "../../components/AdBanner";
 import { massiveToolsList } from "../../data/massiveToolsList";
 
 const DynamicTool = () => {
@@ -138,7 +137,7 @@ Please provide a high-quality, professional, and well-formatted response directl
                 </div>
             )}
 
-            <AdBanner width={728} height={90} bannerId="28752282" />
+            
         </div>
     );
 };

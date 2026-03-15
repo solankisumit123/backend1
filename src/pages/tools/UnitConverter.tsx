@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 type Category = { name: string; units: { label: string; toBase: number }[] };
 
@@ -188,8 +187,8 @@ const UnitConverter = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

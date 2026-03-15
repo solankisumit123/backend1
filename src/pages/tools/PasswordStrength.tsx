@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, AlertTriangle, Clock, ShieldCheck, Zap } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 const PasswordStrength = () => {
     const [password, setPassword] = useState("");
@@ -114,8 +113,8 @@ const PasswordStrength = () => {
             <p className="text-center text-xs text-muted-foreground font-bold mt-4">We do not store or transmit any passwords. Testing runs 100% in your browser.</p>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

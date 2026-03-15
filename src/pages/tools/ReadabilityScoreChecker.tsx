@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const ReadabilityScoreChecker = () => {
     const [text, setText] = useState("");
@@ -130,7 +129,7 @@ const ReadabilityScoreChecker = () => {
                 <p>Check the <strong>readability of your content</strong> using the Flesch Reading Ease and Flesch-Kincaid Grade Level formulas. Get sentence stats, syllable count, reading time, and actionable writing tips. Perfect for SEO writers, bloggers, and content creators.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: readability score checker, flesch reading ease, readability analyzer, content readability test, grade level checker, writing clarity tool.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

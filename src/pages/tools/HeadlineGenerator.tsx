@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 import { generateNvidiaAI } from "@/lib/nvidiaAI";
 
 const HeadlineGenerator = () => {
@@ -95,7 +94,7 @@ const HeadlineGenerator = () => {
             )}
 
             <SEOHead title="AI Headline Generator - Blog Title Generator Free" description="Generate click-worthy blog headlines and titles for any topic. Create 15 unique headline ideas with proven copywriting formulas." keywords="headline generator, blog title generator, ai headline generator, title ideas, content headline creator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AI Headline Generator", "applicationCategory": "WritingApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="AI Headline Generator" subtitle="Headlines That Get Clicks" description="Great headlines can increase click-through rates by 500%. Our AI headline generator uses real-time AI to create custom titles that people can't resist clicking." howToUse={["Enter your blog topic", "Choose a list number (5, 7, 10, 15, 20)", "Click Generate Headlines", "Wait for AI to write fresh headlines", "Copy the best one"]} features={["Real-time AI Generation", "Character Count Display", "Expert Copywriting Patterns", "Custom Outputs", "Unlimited Use"]} faqs={[{ question: "What makes a headline click-worthy?", answer: "The best headlines promise a benefit, create curiosity, use numbers, or address a pain point. Include your target keyword early in the headline for SEO." }]} relatedTools={[{ name: "Meta Title Generator", emoji: "📝", path: "/tools/meta-title-generator" }, { name: "Blog Topic Generator", emoji: "💡", path: "/tools/blog-topic-generator" }]} />
         </div>
     );

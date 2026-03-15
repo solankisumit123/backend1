@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const DaysBetweenDates = () => {
     const [date1, setDate1] = useState("");
@@ -114,8 +113,8 @@ const DaysBetweenDates = () => {
 </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

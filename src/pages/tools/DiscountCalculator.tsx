@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const DiscountCalculator = () => {
     const [mode, setMode] = useState<"pct" | "flat" | "findPct">("pct");
@@ -118,7 +117,7 @@ const DiscountCalculator = () => {
                 <p>Our free <strong>Discount Calculator</strong> helps you instantly find out how much you save on any purchase. Whether it's a <strong>10% off sale</strong>, flat ₹500 discount, or you want to find what percentage off you got — this tool handles it all.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: discount calculator, percentage off calculator, sale price calculator, how much do I save, calculate discount online, shopping discount india.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

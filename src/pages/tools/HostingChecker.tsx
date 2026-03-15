@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 
 import { lookupDNS } from "@/lib/api";
-import AdBanner from "../../components/AdBanner";
 
 interface HostingResult {
     domain: string;

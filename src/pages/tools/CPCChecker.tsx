@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const cpcData: Record<string, { cpc: string; competition: string; clicks: string }> = {
     "insurance": { cpc: "$54.91", competition: "Very High", clicks: "2.1%" },
@@ -93,7 +92,7 @@ const CPCChecker = () => {
             )}
 
             <SEOHead title="CPC Checker - Cost Per Click Tool Free" description="Check average CPC (Cost Per Click) for any keyword. Find high-paying AdSense keywords and plan Google Ads campaigns effectively." keywords="cpc checker, cost per click, cpc tool, google ads cpc, adsense cpc checker, keyword cpc" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CPC Checker", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="CPC Checker Tool" subtitle="Find High-Paying Keywords for Maximum Revenue" description="CPC (Cost Per Click) data helps you understand keyword monetization potential. Find the most profitable keywords for your blog or website." howToUse={["Enter your target keyword", "Click Check CPC", "View the average CPC price", "Check competition level", "Estimate potential AdSense revenue"]} features={["Real CPC Estimates", "Competition Level", "Average CTR", "AdSense Revenue Estimate", "Popular Keyword Examples"]} faqs={[{ question: "What is CPC in SEO?", answer: "CPC (Cost Per Click) indicates the dollar value advertisers pay for each click. Higher CPC keywords mean more AdSense revenue for publisher websites." }]} relatedTools={[{ name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }, { name: "Search Volume", emoji: "📊", path: "/tools/search-volume" }]} />
         </div>
     );

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, Loader2, Play, Youtube, AlertCircle, Search, List, Settings2, Globe, Music, Video, CheckCircle2, Monitor } from "lucide-react";
+import { ArrowLeft, Download, Loader2, Play, Youtube, AlertCircle, Search, List, Settings2, Globe, Music, Video, CheckCircle2, Monitor, Sparkles } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
+import { BACKEND_URL } from "@/config";
 
 interface VideoInfo {
     title: string;
@@ -23,7 +23,7 @@ const YouTubeVideoDownloader = () => {
     const [downloading, setDownloading] = useState(false);
     const [progress, setProgress] = useState(0);
     const [engineStatus, setEngineStatus] = useState<"connecting" | "online" | "offline">("connecting");
-    const localBackendUrl = "http://localhost:5000";
+    const localBackendUrl = BACKEND_URL;
 
     const handleFetchInfo = async (urlToFetch: string) => {
         if (!urlToFetch.trim()) return;
@@ -74,13 +74,25 @@ const YouTubeVideoDownloader = () => {
             setProgress(50);
             window.location.href = downloadUrl;
 
+            // Artificial progress for better UX since actual streaming is handled by browser download
+            const interval = setInterval(() => {
+                setProgress(prev => {
+                    if (prev >= 95) {
+                        clearInterval(interval);
+                        return 100;
+                    }
+                    return prev + 5;
+                });
+            }, 200);
+
             setTimeout(() => {
+                clearInterval(interval);
                 setProgress(100);
                 setTimeout(() => {
                     setDownloading(false);
                     setProgress(0);
                 }, 1000);
-            }, 2000);
+            }, 2500);
         } catch (err: unknown) {
             setError("Local Master Engine error. Please check your connection.");
             setDownloading(false);
@@ -89,206 +101,221 @@ const YouTubeVideoDownloader = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 py-8 max-w-5xl">
-            <Link to="/tools" className="comic-btn text-xs bg-background text-foreground flex items-center gap-2 w-fit mb-6 shadow-sm border-2">
-                <ArrowLeft className="w-4 h-4" /> REVOLT DASHBOARD
+        <div className="container mx-auto px-4 py-8 max-w-6xl animate-fade-in">
+            <Link 
+                to="/tools" 
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/30 backdrop-blur-md border border-white/40 text-secondary hover:bg-white/50 transition-all font-bold text-sm mb-8 group"
+            >
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                Back to Dashboard
             </Link>
 
-            {/* Desktop-Style Professional Toolbar */}
-            <div className="bg-card border-4 border-black rounded-[2rem] p-8 shadow-comic-lg mb-8 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Monitor className="w-48 h-48" />
-                </div>
-
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 relative z-10">
-                    <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-comic-red rounded-2xl flex items-center justify-center border-4 border-black shadow-comic transform -rotate-3 group-hover:rotate-0 transition-transform">
-                            <Youtube className="w-10 h-10 text-white" />
-                        </div>
-                        <div>
-                            <div className="flex items-center gap-2">
-                                <h1 className="comic-heading text-4xl text-foreground -mb-1 tracking-tight">VIDEO MASTER</h1>
-                                <div className={`px-2 py-0.5 rounded-full border-2 border-black text-[8px] font-black uppercase flex items-center gap-1 ${engineStatus === 'online' ? 'bg-comic-green text-white' : engineStatus === 'connecting' ? 'bg-comic-yellow' : 'bg-comic-red text-white'}`}>
-                                    <Globe className={`w-2 h-2 ${engineStatus === 'connecting' ? 'animate-spin' : ''}`} />
-                                    {engineStatus}
-                                </div>
-                            </div>
-                            <p className="text-muted-foreground font-black text-[10px] uppercase tracking-[0.3em]">Direct Local Extraction</p>
-                        </div>
+            {/* Main Header Card */}
+            <div className="glass-panel rounded-[3rem] p-8 md:p-12 mb-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
+                
+                <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-3xl flex items-center justify-center shadow-2xl mb-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <Youtube className="w-12 h-12 text-white" />
                     </div>
+                    
+                    <h1 className="text-4xl md:text-5xl font-black text-secondary tracking-tight mb-4 uppercase">
+                        YouTube <span className="text-primary italic">Video Master</span>
+                    </h1>
+                    <p className="text-secondary/60 font-medium text-lg mb-10 leading-relaxed">
+                        Extract ultra-high quality videos and audio directly from YouTube. Pure extraction, zero distractions, premium quality.
+                    </p>
 
-                    <div className="flex bg-muted p-1.5 rounded-2xl border-4 border-black shadow-comic-sm">
+                    <div className="flex gap-2 p-1.5 bg-white/30 backdrop-blur-xl border border-white/50 rounded-2xl mb-8">
                         <button
                             onClick={() => setActiveTab("video")}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-xl font-black text-xs transition-all ${activeTab === 'video' ? 'bg-comic-red text-white' : 'text-muted-foreground hover:text-foreground'}`}
+                            className={`flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-sm transition-all ${activeTab === 'video' ? 'bg-primary text-white shadow-lg scale-105' : 'text-secondary/60 hover:text-secondary hover:bg-white/40'}`}
                         >
                             <Video className="w-4 h-4" /> VIDEO
                         </button>
                         <button
                             onClick={() => setActiveTab("audio")}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-xl font-black text-xs transition-all ${activeTab === 'audio' ? 'bg-comic-green text-white' : 'text-muted-foreground hover:text-foreground'}`}
+                            className={`flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-sm transition-all ${activeTab === 'audio' ? 'bg-accent text-white shadow-lg scale-105' : 'text-secondary/60 hover:text-secondary hover:bg-white/40'}`}
                         >
                             <Music className="w-4 h-4" /> AUDIO
                         </button>
                     </div>
+
+                    <form onSubmit={processInput} className="w-full flex flex-col md:flex-row gap-4">
+                        <div className="relative flex-1 group">
+                            <input
+                                type="text"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Paste YouTube link here (Video or Playlist)..."
+                                className="w-full glass-input py-5 px-8 text-lg font-bold placeholder:text-secondary/30 focus:bg-white/50 transition-all border-white/60"
+                            />
+                            {loading && (
+                                <div className="absolute right-6 top-1/2 -translate-y-1/2">
+                                    <Loader2 className="w-6 h-6 animate-spin text-primary" />
+                                </div>
+                            )}
+                        </div>
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="px-12 py-5 rounded-3xl bg-secondary text-white font-black text-xl hover:bg-primary shadow-xl hover:scale-105 transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+                        >
+                            {loading ? 'ANALYZING...' : (
+                                <>
+                                    <Sparkles className="w-6 h-6" />
+                                    EXTRACT
+                                </>
+                            )}
+                        </button>
+                    </form>
+
+                    {error && (
+                        <div className="mt-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 font-bold text-sm flex items-center gap-3 animate-shake">
+                            <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                            {error}
+                        </div>
+                    )}
+
+                    <div className="mt-8 flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${engineStatus === 'online' ? 'bg-green-500' : 'bg-orange-500'} animate-pulse`} />
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-secondary/40">
+                            Engine Status: {engineStatus} • Direct Cloud Sync Enabled
+                        </span>
+                    </div>
                 </div>
-
-                <form onSubmit={processInput} className="flex flex-col md:flex-row gap-4 relative z-10">
-                    <div className="relative flex-1">
-                        <input
-                            type="text"
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                            placeholder="PASTE SOURCE URL (YOUTUBE/PLAYLIST)..."
-                            className="w-full bg-background border-4 border-black rounded-2xl px-6 py-5 text-lg font-black placeholder:text-muted-foreground/30 focus:outline-none focus:border-comic-blue transition-all"
-                        />
-                        {loading && (
-                            <div className="absolute right-6 top-1/2 -translate-y-1/2">
-                                <Loader2 className="w-6 h-6 animate-spin text-comic-blue" />
-                            </div>
-                        )}
-                    </div>
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="comic-btn bg-comic-blue text-white px-12 py-5 text-xl font-black shadow-comic hover:translate-y-[-2px] active:translate-y-[2px]"
-                    >
-                        ANALYZE
-                    </button>
-                </form>
-
-                {error && (
-                    <div className="mt-4 bg-destructive/10 text-destructive text-sm font-black p-4 rounded-xl border-4 border-destructive/20 flex items-center gap-2 animate-shake">
-                        <AlertCircle className="w-5 h-5" /> {error}
-                    </div>
-                )}
             </div>
 
             {videoInfo && (
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 animate-slide-up">
-                    <div className="lg:col-span-12">
-                        {downloading && (
-                            <div className="mb-8 space-y-3">
-                                <div className="flex justify-between font-black text-xs uppercase italic tracking-widest text-comic-blue px-2">
-                                    <span className="flex items-center gap-2">
-                                        <Loader2 className="w-3 h-3 animate-spin" /> Stream Initializing...
-                                    </span>
-                                    <span>{progress}%</span>
-                                </div>
-                                <div className="h-4 w-full bg-muted border-4 border-black rounded-full overflow-hidden shadow-comic-sm">
-                                    <div
-                                        className="h-full bg-comic-blue transition-all duration-300 ease-out border-r-4 border-black"
-                                        style={{ width: `${progress}%` }}
-                                    />
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Left Panel: Preview */}
-                    <div className="lg:col-span-5 space-y-6">
-                        <div className="comic-card p-0 overflow-hidden border-4 border-black shadow-comic h-fit">
-                            <div className="relative aspect-video">
-                                <img src={videoInfo.thumbnail} alt={videoInfo.title} className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-3 h-3 bg-comic-red rounded-full animate-pulse" />
-                                        <p className="text-white font-black text-xs uppercase tracking-[0.2em]">{videoInfo.author}</p>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 animate-slide-up">
+                    {/* Left: Preview Panel */}
+                    <div className="lg:col-span-5">
+                        <div className="glass-panel overflow-hidden rounded-[2.5rem] shadow-2xl group h-fit">
+                            <div className="relative aspect-video overflow-hidden">
+                                <img 
+                                    src={videoInfo.thumbnail} 
+                                    alt={videoInfo.title} 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                                            <Play className="w-5 h-5 text-white fill-current" />
+                                        </div>
+                                        <p className="text-white font-black text-sm uppercase tracking-widest">{videoInfo.author}</p>
                                     </div>
                                 </div>
+                                <div className="absolute top-6 right-6 px-4 py-2 bg-black/50 backdrop-blur-xl rounded-full text-white font-black text-xs border border-white/20">
+                                    {videoInfo.duration}
+                                </div>
                             </div>
-                            <div className="p-8 bg-card border-t-4 border-black">
-                                <h2 className="font-black text-3xl text-foreground leading-[1.1] mb-4 uppercase italic tracking-tighter">
+                            <div className="p-10">
+                                <h3 className="text-2xl md:text-3xl font-black text-secondary leading-tight mb-6 line-clamp-2 uppercase">
                                     {videoInfo.title}
-                                </h2>
-                                <div className="flex gap-4">
-                                    <div className="flex-1 bg-muted p-4 rounded-2xl border-2 border-black">
-                                        <p className="text-[10px] font-black opacity-50 uppercase mb-1">Type</p>
-                                        <p className="text-sm font-black uppercase text-comic-blue">{videoInfo.duration}</p>
+                                </h3>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-white/30 p-4 rounded-2xl border border-white/50 flex flex-col items-center justify-center text-center">
+                                        <span className="text-[10px] font-black uppercase opacity-40 mb-1">Status</span>
+                                        <span className="text-sm font-black text-primary">PREPPED</span>
                                     </div>
-                                    <div className="flex-1 bg-muted p-4 rounded-2xl border-2 border-black">
-                                        <p className="text-[10px] font-black opacity-50 uppercase mb-1">Status</p>
-                                        <p className="text-sm font-black uppercase text-comic-green">MASTER READY</p>
+                                    <div className="bg-white/30 p-4 rounded-2xl border border-white/50 flex flex-col items-center justify-center text-center">
+                                        <span className="text-[10px] font-black uppercase opacity-40 mb-1">Source</span>
+                                        <span className="text-sm font-black text-secondary">YOUTUBE</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="bg-comic-yellow/5 border-4 border-comic-yellow/30 border-dashed rounded-[2rem] p-6">
-                            <h4 className="font-black text-xs mb-3 flex items-center gap-2 text-comic-yellow-dark tracking-widest">
-                                <Settings2 className="w-4 h-4" /> MASTER SYNC LOG
-                            </h4>
-                            <p className="text-[10px] font-bold text-muted-foreground leading-relaxed uppercase">
-                                Direct stream bypass enabled. Utilizing high-bandwidth cloud buffer for {activeTab === 'video' ? 'visual' : 'acoustic'} extraction. No redirection active.
-                            </p>
                         </div>
                     </div>
 
-                    {/* Right Panel: Controls */}
+                    {/* Right: Quality Selection */}
                     <div className="lg:col-span-7">
-                        <div className="bg-card border-4 border-black rounded-[2rem] p-8 shadow-comic-lg h-full">
-                            <div className="flex items-center justify-between mb-8 pb-4 border-b-4 border-black">
-                                <h3 className="comic-heading text-2xl text-foreground uppercase tracking-tight flex items-center gap-3">
-                                    {activeTab === 'video' ? <Video className="w-8 h-8" /> : <Music className="w-8 h-8" />}
-                                    Select Quality
+                        <div className="glass-panel rounded-[2.5rem] p-10 h-full shadow-2xl relative overflow-hidden">
+                            <div className="flex items-center justify-between mb-10">
+                                <h3 className="text-2xl font-black text-secondary uppercase tracking-tight flex items-center gap-4">
+                                    {activeTab === 'video' ? <Video className="w-8 h-8 text-primary" /> : <Music className="w-8 h-8 text-accent" />}
+                                    Download Options
                                 </h3>
-                                <div className="flex items-center gap-2 px-4 py-1.5 bg-comic-green/10 text-comic-green border-2 border-black rounded-full font-black text-[10px] shadow-comic-sm">
-                                    <CheckCircle2 className="w-4 h-4" /> DIRECT DOWNLOAD
+                                <div className="px-4 py-1.5 bg-green-500/10 text-green-600 rounded-full font-black text-[10px] tracking-widest border border-green-500/20">
+                                    VERIFIED
                                 </div>
                             </div>
+
+                            {downloading && (
+                                <div className="mb-10 animate-fade-in">
+                                    <div className="flex justify-between font-black text-[10px] uppercase tracking-[0.2em] text-primary mb-3 px-1">
+                                        <span className="flex items-center gap-2">
+                                            <Loader2 className="w-3 h-3 animate-spin" /> 
+                                            {progress === 100 ? 'DOWNLOAD READY' : 'BYPASSING API LIMITS...'}
+                                        </span>
+                                        <span>{progress}%</span>
+                                    </div>
+                                    <div className="h-4 w-full bg-white/20 rounded-full overflow-hidden border border-white/40 shadow-inner">
+                                        <div
+                                            className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-300 ease-out"
+                                            style={{ width: `${progress}%` }}
+                                        />
+                                    </div>
+                                </div>
+                            )}
 
                             {activeTab === 'video' ? (
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {[
-                                        { q: "720", label: "720P HD", sub: "Standard Sharpness", color: "bg-comic-blue" },
-                                        { q: "1080", label: "1080P FHD", sub: "Crystal Clear", color: "bg-comic-purple" },
-                                        { q: "1440", label: "2K QHD", sub: "Pro Extraction", color: "bg-comic-orange" },
-                                        { q: "4k", label: "4K UHD", sub: "Maximum Fidelity", color: "bg-comic-red" },
+                                        { q: "720", label: "720P HD", sub: "Fastest Sync", class: "hover:border-blue-400" },
+                                        { q: "1080", label: "1080P FHD", sub: "High Quality", class: "hover:border-purple-400" },
+                                        { q: "1440", label: "2K QHD", sub: "Pro Grade", class: "hover:border-pink-400" },
+                                        { q: "4k", label: "4K UHD", sub: "Max Detail", class: "hover:border-orange-400" },
                                     ].map((opt) => (
                                         <button
                                             key={opt.q}
                                             disabled={downloading}
                                             onClick={() => triggerDirectDownload("mp4", opt.q)}
-                                            className="group relative flex flex-col items-center justify-center p-6 border-4 border-black rounded-2xl bg-background hover:bg-muted transition-all hover:translate-y-[-4px] active:translate-y-[2px] shadow-comic-sm"
+                                            className={`p-8 rounded-3xl bg-white/40 border border-white/60 flex flex-col items-center justify-center text-center transition-all hover:bg-white/60 hover:shadow-2xl hover:scale-105 active:scale-95 group ${opt.class}`}
                                         >
-                                            <div className={`w-12 h-12 ${opt.color} text-white rounded-xl mb-3 flex items-center justify-center border-2 border-black shadow-comic-sm group-hover:rotate-6 transition-transform`}>
+                                            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-xl group-hover:bg-primary group-hover:text-white transition-colors duration-500 border border-black/5">
                                                 <Download className="w-6 h-6" />
                                             </div>
-                                            <span className="font-black text-xl tracking-tighter uppercase italic">{opt.label}</span>
-                                            <span className="text-[10px] font-bold opacity-60 uppercase tracking-widest">{opt.sub}</span>
+                                            <span className="text-2xl font-black text-secondary uppercase tracking-tighter mb-1">{opt.label}</span>
+                                            <span className="text-[10px] font-black text-secondary/40 uppercase tracking-widest">{opt.sub}</span>
                                         </button>
                                     ))}
                                 </div>
                             ) : (
-                                <div className="grid grid-cols-1 gap-4">
+                                <div className="space-y-4">
                                     {[
-                                        { q: "mp3", label: "MP3 128KBPS", sub: "Standard Buffer", icon: Music, color: "bg-comic-blue" },
-                                        { q: "320", label: "MP3 320KBPS", sub: "Studio Master", icon: Globe, color: "bg-comic-green" },
+                                        { label: "MP3 128KBPS", sub: "Optimized Selection", icon: Music, gradient: "from-blue-500/10 to-blue-600/10" },
+                                        { label: "MP3 320KBPS", sub: "Master Fidelity", icon: Sparkles, gradient: "from-purple-500/10 to-purple-600/10" },
                                     ].map((opt) => (
                                         <button
                                             key={opt.label}
                                             disabled={downloading}
-                                            onClick={() => triggerDirectDownload("mp3", opt.q === "320" ? "320" : undefined)}
-                                            className="group flex items-center justify-between p-8 border-4 border-black rounded-2xl bg-background hover:bg-muted transition-all hover:translate-y-[-4px] active:translate-y-[2px] shadow-comic-sm"
+                                            onClick={() => triggerDirectDownload("mp3", opt.label.includes("320") ? "320" : undefined)}
+                                            className={`w-full flex items-center justify-between p-8 rounded-3xl bg-white/40 border border-white/60 hover:bg-white/60 transition-all hover:shadow-2xl hover:translate-x-2 active:scale-95 group`}
                                         >
-                                            <div className="flex items-center gap-6">
-                                                <div className={`w-14 h-14 ${opt.color} text-white rounded-full flex items-center justify-center border-4 border-black shadow-comic-sm group-hover:scale-110 transition-transform`}>
-                                                    <opt.icon className="w-7 h-7" />
+                                            <div className="flex items-center gap-8">
+                                                <div className="w-20 h-20 bg-white rounded-[1.5rem] flex items-center justify-center shadow-xl group-hover:bg-accent group-hover:text-white transition-colors duration-500 border border-black/5">
+                                                    <opt.icon className="w-8 h-8" />
                                                 </div>
                                                 <div className="text-left">
-                                                    <span className="block font-black text-2xl tracking-tighter uppercase italic">{opt.label}</span>
-                                                    <span className="text-xs font-bold opacity-60 uppercase">{opt.sub}</span>
+                                                    <span className="block text-2xl font-black text-secondary uppercase tracking-tighter mb-1">{opt.label}</span>
+                                                    <span className="text-xs font-black text-secondary/40 uppercase tracking-[0.2em]">{opt.sub}</span>
                                                 </div>
                                             </div>
-                                            <Download className="w-8 h-8 text-muted-foreground opacity-30 group-hover:opacity-100 transition-opacity" />
+                                            <div className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center opacity-30 group-hover:opacity-100 group-hover:bg-white transition-all">
+                                                <Download className="w-5 h-5 text-secondary" />
+                                            </div>
                                         </button>
                                     ))}
                                 </div>
                             )}
 
-                            <div className="mt-8 pt-6 border-t-4 border-black border-dotted text-center">
-                                <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.4em] animate-pulse">
-                                    Encrypted Stream • Zero Redirects • Master Process Active
+                            <div className="mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-2xl bg-white/20 border border-white/30 backdrop-blur-md">
+                                <div className="flex -space-x-2">
+                                    {[1,2,3].map(i => <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-primary/40 overflow-hidden" />)}
+                                </div>
+                                <p className="text-[10px] font-black text-secondary/40 uppercase tracking-[0.3em]">
+                                    Trust Protocol • Zero Redirects • Secure Buffer
                                 </p>
                             </div>
                         </div>
@@ -297,22 +324,26 @@ const YouTubeVideoDownloader = () => {
             )}
 
             {!videoInfo && !loading && (
-                <div className="mt-12 text-center py-32 bg-card/50 border-8 border-dashed border-black/10 rounded-[4rem] animate-pulse">
-                    <Download className="w-24 h-24 mx-auto mb-6 text-muted-foreground opacity-20" />
-                    <p className="text-3xl font-black text-muted-foreground uppercase tracking-[0.2em] italic pr-4">Awaiting Signal...</p>
-                    <div className="flex gap-4 justify-center mt-8">
-                        {['CORE', 'SYNC', 'AES-256', '8K'].map(tag => (
-                            <div key={tag} className="px-5 py-2 bg-muted border-4 border-black rounded-xl text-xs font-black opacity-40 shadow-comic-sm">{tag}</div>
-                        ))}
+                <div className="mt-12 group">
+                    <div className="relative py-24 md:py-32 flex flex-col items-center justify-center glass-panel rounded-[4rem] border-dashed border-white/60 hover:bg-white/30 transition-all duration-700">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                        
+                        <div className="relative z-10 text-center animate-pulse">
+                            <div className="w-32 h-32 bg-white/40 backdrop-blur-2xl rounded-[3rem] flex items-center justify-center mb-8 border border-white/60 shadow-inner group-hover:scale-110 group-hover:rotate-12 transition-transform duration-1000">
+                                <Download className="w-12 h-12 text-primary opacity-30" />
+                            </div>
+                            <p className="text-3xl font-black text-secondary/40 uppercase tracking-[0.4em] italic pr-4">Awaiting Link</p>
+                            <div className="flex gap-4 justify-center mt-12">
+                                {['SSL', '8K', 'V6', '256-BIT'].map(tag => (
+                                    <div key={tag} className="px-6 py-2 bg-white/30 rounded-full text-[10px] font-black text-secondary/20 border border-white/40 shadow-sm">{tag}</div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
 
-            <div className="mt-12">
-                <div className="flex justify-center mb-8">
-                    <AdBanner width={728} height={90} bannerId="28752282" />
-                </div>
-
+            <div className="mt-20">
                 <SEOHead
                     title="YouTube Video Downloader - Download 4K & MP3 Videos Online"
                     description="The ultimate free YouTube downloader. Extract high-quality MP4/MP3 files directly from YouTube using our private Master Engine. No ads, no redirects, 100% direct."

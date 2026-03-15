@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const TEXTS = [
     "The quick brown fox jumps over the lazy dog. Practice makes perfect and typing gets faster with time.",
@@ -148,8 +147,8 @@ const TypingSpeedTest = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

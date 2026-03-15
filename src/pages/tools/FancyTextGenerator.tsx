@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const styles: { name: string; convert: (t: string) => string }[] = [
     { name: "𝗕𝗼𝗹𝗱", convert: t => t.replace(/[a-z]/g, c => String.fromCodePoint(c.charCodeAt(0) + 0x1D41A - 97)).replace(/[A-Z]/g, c => String.fromCodePoint(c.charCodeAt(0) + 0x1D400 - 65)) },

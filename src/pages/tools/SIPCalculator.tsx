@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const SIPCalculator = () => {
     const [monthly, setMonthly] = useState("");
@@ -108,7 +107,7 @@ const SIPCalculator = () => {
             )}
 
             <SEOHead title="SIP Calculator - Mutual Fund SIP Returns Calculator" description="Calculate SIP returns for mutual fund investments. Find out how much you'll earn through monthly SIP with our free online SIP calculator." keywords="sip calculator, mutual fund sip calculator, sip returns calculator, monthly sip calculator, investment calculator india" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "SIP Calculator", "applicationCategory": "FinanceApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="SIP Calculator" subtitle="Plan Your Mutual Fund Investments" description="SIP (Systematic Investment Plan) helps you invest a fixed amount regularly in mutual funds. Our SIP calculator shows your potential returns with compound growth over time." howToUse={["Enter your monthly SIP amount", "Set expected annual return rate", "Enter investment period in years", "Click Calculate SIP Returns", "View year-wise growth table"]} features={["Maturity Value Calculation", "Total Returns Breakdown", "Year-wise Growth Table", "Quick Presets for Rate & Time", "Indian Number Formatting"]} faqs={[{ question: "What is SIP?", answer: "SIP (Systematic Investment Plan) allows you to invest a fixed amount monthly in mutual funds. It uses rupee cost averaging to reduce market risk over time." }, { question: "What returns can I expect?", answer: "Equity mutual funds have historically given 10-15% annual returns over long periods. Debt funds typically give 6-8%. Past returns don't guarantee future results." }]} relatedTools={[{ name: "EMI Calculator", emoji: "💰", path: "/tools/emi-calculator" }, { name: "Compound Interest", emoji: "📈", path: "/tools/compound-interest" }]} />
         </div>
     );

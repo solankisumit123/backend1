@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const relatedMap: Record<string, string[]> = {
     "seo": ["search engine optimization", "seo audit", "on-page seo", "technical seo", "local seo", "mobile seo", "seo strategy", "seo checklist", "seo best practices", "white hat seo"],
@@ -87,7 +86,7 @@ const RelatedKeywordsFinder = () => {
             )}
 
             <SEOHead title="Related Keywords Finder - LSI Keyword Generator" description="Discover semantically related keywords and LSI terms for any seed keyword. Improve your content's topical relevance and SEO rankings." keywords="related keywords finder, lsi keywords, semantic keywords, related keywords generator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Related Keywords Finder", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Related Keywords Finder" subtitle="Find LSI & Semantic Keywords" description="LSI (Latent Semantic Indexing) keywords help Google understand your content's context. Our tool generates related terms to improve your content's topical authority." howToUse={["Enter your seed keyword", "Click Find Related", "Browse 25+ related keywords", "Click any keyword to copy it", "Use in your content naturally"]} features={["25+ Related Keywords", "Semantic Variations", "LSI Keywords", "Topic Expansion Ideas", "Click to Copy"]} faqs={[{ question: "What are LSI keywords?", answer: "LSI (Latent Semantic Indexing) keywords are terms semantically related to your main keyword. Using them helps search engines understand your content better and can improve rankings." }]} relatedTools={[{ name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }, { name: "Keyword Density", emoji: "📊", path: "/tools/keyword-density" }]} />
         </div>
     );

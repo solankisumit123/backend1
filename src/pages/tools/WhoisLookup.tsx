@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 
 import { lookupWhois, type WhoisResult } from "@/lib/api";
-import AdBanner from "../../components/AdBanner";
 
 const WhoisLookup = () => {
     const [domain, setDomain] = useState("");

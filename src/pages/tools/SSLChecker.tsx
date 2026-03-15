@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 import { checkSSL, type SSLResult } from "@/lib/api";
 import { useAuth } from "@/lib/AuthContext";
-import AdBanner from "../../components/AdBanner";
 
 const SSLChecker = () => {
   const [domain, setDomain] = useState("");

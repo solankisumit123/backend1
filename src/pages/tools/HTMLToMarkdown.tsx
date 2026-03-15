@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, Download } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 const HTMLToMarkdown = () => {
     const [input, setInput] = useState("");
@@ -69,8 +68,8 @@ const HTMLToMarkdown = () => {
             <button onClick={convert} className="comic-btn bg-primary text-primary-foreground mx-auto flex items-center gap-2">🔄 Convert to Markdown</button>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

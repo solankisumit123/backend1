@@ -6,7 +6,6 @@ import {
     FileImage
 } from "lucide-react";
 import { toast } from "sonner";
-import AdBanner from "../../components/AdBanner";
 
 /* ─── Types ─── */
 type ActiveTool = "compress" | "resize" | "convert" | "crop" | "rotate" | null;
@@ -512,8 +511,8 @@ const ImageTools = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

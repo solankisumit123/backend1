@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const YouTubeTagGenerator = () => {
     const [title, setTitle] = useState("");
@@ -85,7 +84,7 @@ const YouTubeTagGenerator = () => {
             )}
 
             <SEOHead title="YouTube Tag Generator - Free Video Tags Tool" description="Generate SEO-optimized tags for YouTube videos. Get 30 relevant tags from your video title to rank higher in YouTube search results." keywords="youtube tag generator, youtube tags, video tags generator, youtube seo tags, free youtube tags" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "YouTube Tag Generator", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="YouTube Tag Generator" subtitle="More Tags = More Views" description="YouTube uses tags to understand and recommend your content. Our generator creates 30 relevant tags from your video title — just copy and paste into YouTube." howToUse={["Enter your YouTube video title", "Click Generate to get 30 tags", "Check character count (max 500)", "Click Copy All or individual tags", "Paste directly into YouTube's tag field"]} features={["30 Relevant Tags", "Character Count Tracker", "500 Char Limit Warning", "Click Individual Tags to Copy", "Copy All Feature"]} faqs={[{ question: "How many YouTube tags should I use?", answer: "YouTube allows up to 500 characters for tags. Use 10-20 high-quality, relevant tags. Include broad and specific tags, and your primary keyword as the first tag." }]} relatedTools={[{ name: "YouTube Keyword Tool", emoji: "▶️", path: "/tools/youtube-keyword" }, { name: "Hashtag Generator", emoji: "#️⃣", path: "/tools/hashtags" }]} />
         </div>
     );

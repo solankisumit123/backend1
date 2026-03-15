@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const volumeData: Record<string, { volume: string; trend: string; change: string }> = {
     "seo": { volume: "246,000", trend: "📈 Stable", change: "+2%" },
@@ -88,7 +87,7 @@ const SearchVolumeChecker = () => {
             )}
 
             <SEOHead title="Search Volume Checker - Monthly Keyword Volume Tool" description="Check monthly search volume for any keyword. Understand how often people search for your target keywords and plan your SEO strategy." keywords="search volume checker, keyword search volume, monthly searches, keyword volume tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Search Volume Checker", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Search Volume Checker" subtitle="Know How Often People Search Your Keywords" description="Understanding search volume is crucial for SEO. Our tool provides estimated monthly search volumes so you can prioritize the right keywords for your content strategy." howToUse={["Enter your keyword", "Click Check", "See monthly search volume", "View trend and year-over-year change", "Compare different keywords"]} features={["Monthly Volume Estimates", "Trend Analysis", "YoY Change", "Popular Keyword Examples", "Instant Results"]} faqs={[{ question: "What is search volume?", answer: "Search volume is the average number of times a keyword is searched per month. High-volume keywords bring more traffic potential but are usually more competitive." }]} relatedTools={[{ name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }, { name: "Keyword Difficulty", emoji: "💪", path: "/tools/keyword-difficulty" }]} />
         </div>
     );

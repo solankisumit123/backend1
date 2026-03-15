@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const CTRCalculator = () => {
     const [impressions, setImpressions] = useState("");
@@ -77,7 +76,7 @@ const CTRCalculator = () => {
             )}
 
             <SEOHead title="CTR Calculator - Click Through Rate Calculator Free" description="Calculate click-through rate (CTR) for ads, emails, and organic search. Compare your CTR against industry benchmarks." keywords="ctr calculator, click through rate calculator, ctr formula, google ads ctr, email ctr calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CTR Calculator", "applicationCategory": "MarketingApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Click-Through Rate Calculator" subtitle="Measure Your Marketing Performance" description="CTR measures how often people click your link after seeing it. Higher CTR means your titles and descriptions are compelling to your audience." howToUse={["Enter total impressions", "Enter the number of clicks", "Click Calculate CTR", "View your CTR percentage", "Compare against benchmarks"]} features={["Instant CTR Calculation", "Performance Label", "Industry Benchmarks", "Simple Formula", "Multiple Channel Data"]} faqs={[{ question: "What is a good CTR for Google Search?", answer: "The average Google organic CTR for position 1 is about 10-30%. For Google Ads, 2-5% is considered good. Higher positions get more clicks." }]} relatedTools={[{ name: "Conversion Rate", emoji: "📊", path: "/tools/conversion-rate-calculator" }, { name: "ROI Calculator", emoji: "💹", path: "/tools/roi-calculator" }]} />
         </div>
     );

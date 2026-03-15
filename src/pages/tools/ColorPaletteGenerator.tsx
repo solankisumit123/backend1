@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check, RefreshCw, Lock, Unlock } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const hslToHex = (h: number, s: number, l: number): string => {
     s /= 100; l /= 100;
@@ -151,7 +150,7 @@ const ColorPaletteGenerator = () => {
                 <p>Generate stunning <strong>color palettes</strong> using color theory. Choose from analogous, complementary, triadic, split-complementary, and monochromatic schemes. Lock colors you like and regenerate to find the perfect combination. Great for UI designers, web developers, and artists.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: color palette generator, color scheme generator, colour combinations, complementary colors, analogous colors, hex color palette, ui design colors.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 

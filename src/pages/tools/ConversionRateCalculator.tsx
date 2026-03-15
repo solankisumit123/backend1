@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ConversionRateCalculator = () => {
     const [visitors, setVisitors] = useState("");
@@ -98,7 +97,7 @@ const ConversionRateCalculator = () => {
             )}
 
             <SEOHead title="Conversion Rate Calculator - CVR Calculator Free" description="Calculate website conversion rate, revenue per visitor, and cost per conversion. Compare your CVR against industry benchmarks with our free calculator." keywords="conversion rate calculator, cvr calculator, website conversion rate, conversion tracking, ecommerce cvr" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Conversion Rate Calculator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Conversion Rate Calculator" subtitle="Measure and Improve Your Marketing ROI" description="Conversion rate is one of the most important metrics for any website or business. Our calculator helps you measure CVR and compare it against industry benchmarks." howToUse={["Enter total website visitors", "Enter number of conversions", "Add revenue and ad spend (optional)", "Click Calculate CVR", "Compare to industry benchmarks"]} features={["CVR Percentage", "Revenue Per Visitor", "Cost Per Conversion", "Industry Benchmarks", "Performance Labels"]} faqs={[{ question: "What is a good conversion rate?", answer: "Average website CVR is 2-3%. E-commerce sites average 1-4%. Above 5% is excellent. Focus on improving user experience, CTAs, and landing page copy to increase CVR." }]} relatedTools={[{ name: "CTR Calculator", emoji: "👆", path: "/tools/ctr-calculator" }, { name: "ROI Calculator", emoji: "💹", path: "/tools/roi-calculator" }]} />
         </div>
     );

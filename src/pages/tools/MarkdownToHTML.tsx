@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const mdToHtml = (md: string): string => {
     let html = md;
@@ -94,7 +93,7 @@ const MarkdownToHTML = () => {
                 <p>Convert <strong>Markdown to HTML</strong> instantly. Supports headings, bold, italic, links, images, lists, blockquotes, code, and horizontal rules. See live preview of your converted HTML. Great for bloggers, developers, and content creators.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: markdown to html, md to html converter, markdown converter online, convert markdown to html code, free markdown tool.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

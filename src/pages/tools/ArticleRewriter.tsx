@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const synonyms: Record<string, string[]> = {
     good: ["great", "excellent", "superb", "wonderful", "fine"],
@@ -136,7 +135,7 @@ const ArticleRewriter = () => {
                 <p>Rewrite and paraphrase your articles using intelligent <strong>synonym replacement</strong>. Great for content creators, bloggers, and students who need to create unique versions of text. Each rewrite generates different results.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: article rewriter, paraphrasing tool, text rewriter online, content spinner, synonym replacer, reword article free, paraphrase text.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

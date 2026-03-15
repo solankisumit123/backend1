@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const BodyFatCalculator = () => {
     const [gender, setGender] = useState<"male" | "female">("male");
@@ -125,7 +124,7 @@ const BodyFatCalculator = () => {
             )}
 
             <SEOHead title="Body Fat Calculator - Calculate Body Fat Percentage" description="Calculate your body fat percentage using the U.S. Navy method. Find fat mass, lean mass, and fitness category with our free body fat calculator." keywords="body fat calculator, body fat percentage calculator, navy body fat method, fat percentage calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Body Fat Calculator", "applicationCategory": "HealthApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Body Fat Percentage Calculator" subtitle="U.S. Navy Method - Most Accurate Free Tool" description="Our body fat calculator uses the U.S. Navy circumference method, which is accurate to within 3% of DEXA scans. Track your fitness progress by monitoring body fat percentage." howToUse={["Select Male or Female", "Enter your height in cm", "Measure and enter waist circumference", "Measure and enter neck circumference", "Women: measure hip circumference too", "Click Calculate Body Fat"]} features={["U.S. Navy Method Formula", "Fat Mass & Lean Mass Breakdown", "Fitness Category Classification", "Male & Female Calculations", "Optional Weight for Mass Calculation"]} faqs={[{ question: "How to measure waist for body fat?", answer: "Measure your waist at the navel (belly button) level. Stand relaxed without sucking in your stomach. Measure in the same spot each time for consistency." }]} relatedTools={[{ name: "BMI Calculator", emoji: "⚖️", path: "/tools/bmi-calculator" }, { name: "TDEE Calculator", emoji: "🔥", path: "/tools/tdee-calculator" }]} />
         </div>
     );

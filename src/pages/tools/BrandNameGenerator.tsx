@@ -3,7 +3,6 @@ import { ArrowLeft, Wand2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 import { generateNvidiaAI } from "@/lib/nvidiaAI";
 
 const BrandNameGenerator = () => {
@@ -128,7 +127,7 @@ const BrandNameGenerator = () => {
             )}
 
             <SEOHead title="Brand Name Generator - AI Business Naming Tool Free" description="Generate catchy, unique, and memorable brand names using Artificial Intelligence. Find the perfect name for your startup, e-commerce store, or agency." keywords="brand name generator, business name generator, ai naming tool, company name ideas, tech startup names" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AI Brand Name Generator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="AI Brand & Business Name Generator" subtitle="Find Your Perfect Identity" description="Naming a company is hard. Our AI Brand Name Generator takes your core offerings and creatively combines them to brainstorm premium, meaningful brand names within seconds." howToUse={["Enter keywords describing your business", "Select your industry", "Choose a naming style (Modern, Classic, Playful, Compound)", "Generate Names", "The AI explains the reasoning behind each generated name"]} features={["Real AI Brainstorming", "5 Unique Concepts Per Generation", "Name Psychological Reasoning", "Style Formatting", "Instant Result Generation"]} faqs={[{ question: "What makes a good brand name?", answer: "The best brand names are memorable, easy to spell, short (1-3 syllables), and convey an emotion or value related to your product." }]} relatedTools={[{ name: "Slogan Generator", emoji: "🗣️", path: "/tools/slogan-generator" }, { name: "Headline Generator", emoji: "✏️", path: "/tools/headline-generator" }]} />
         </div>
     );

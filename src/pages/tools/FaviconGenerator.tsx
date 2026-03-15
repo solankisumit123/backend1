@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ColorPaletteFromImage = () => {
     const [colors] = useState([
@@ -158,7 +157,7 @@ const FaviconGenerator = () => {
             </div>
 
             <SEOHead title="Favicon Generator - Create Website Favicon Online Free" description="Create custom favicons for your website instantly. Generate 16x16, 32x32, and 64x64 favicons with custom text, colors, and shapes." keywords="favicon generator, create favicon, favicon maker, website favicon, ico generator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Favicon Generator", "applicationCategory": "DesignApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Favicon Generator" subtitle="Create Professional Favicons Instantly" description="A favicon (favorites icon) is the small icon displayed in browser tabs and bookmarks. Our generator lets you create custom text-based favicons without any design skills." howToUse={["Enter your brand initials (1-2 letters)", "Choose background and text colors", "Select shape (square, rounded, or circle)", "Preview at different sizes", "Click Download Favicon (PNG)"]} features={["Live Preview at 16/32/64px", "Custom Colors", "3 Shape Options", "Color Presets", "Instant PNG Download"]} faqs={[{ question: "What format is the downloaded favicon?", answer: "We download as PNG which is supported by all modern browsers. For legacy ICO format, upload the PNG to online converters like realfavicongenerator.net." }]} relatedTools={[{ name: "Color Picker", emoji: "🎨", path: "/tools/color-picker" }, { name: "Color Palette", emoji: "🎭", path: "/tools/color-palette" }]} />
         </div>
     );

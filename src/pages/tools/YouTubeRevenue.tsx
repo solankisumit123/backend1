@@ -1,7 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import AdBanner from "../../components/AdBanner";
 
 const YouTubeRevenue = () => {
     const [views, setViews] = useState(100000);
@@ -71,8 +70,8 @@ const YouTubeRevenue = () => {
 </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

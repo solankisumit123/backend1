@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const FDRDCalculator = () => {
     const [type, setType] = useState<"fd" | "rd">("fd");
@@ -163,7 +162,7 @@ const FDRDCalculator = () => {
                 <p>Our <strong>FD Calculator</strong> lets you calculate the maturity amount for Fixed Deposits from SBI, HDFC, ICICI, Axis, Post Office, and more. Our <strong>RD Calculator</strong> helps you plan your monthly savings with Recurring Deposits.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: fd calculator, rd calculator, fixed deposit calculator india, recurring deposit calculator, sbi fd calculator, hdfc fd interest calculator, fd maturity calculator online.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

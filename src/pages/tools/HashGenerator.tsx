@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowLeft, Lock, Copy } from "lucide-react";
 import { toast } from "sonner";
-import AdBanner from "../../components/AdBanner";
 
 const HashGenerator = () => {
     const [text, setText] = useState("");
@@ -80,8 +79,8 @@ const HashGenerator = () => {
 </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

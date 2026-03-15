@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const trendingKeywords = [
     { keyword: "AI tools 2025", growth: "+890%", category: "Technology" },
@@ -73,7 +72,7 @@ const TrendingKeywordsFinder = () => {
             </div>
 
             <SEOHead title="Trending Keywords Finder - Hot Search Terms 2025" description="Discover trending keywords and hot search terms. Stay ahead of competitors by targeting emerging topics before they peak." keywords="trending keywords, trending searches, hot keywords, google trends, popular keywords 2025" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Trending Keywords Finder", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Trending Keywords Finder" subtitle="Stay Ahead with Rising Search Terms" description="Capitalize on trending topics before your competitors. Our curated list of trending keywords helps you create timely, high-traffic content." howToUse={["Browse trending keywords by category", "Filter by Technology, Finance, Marketing, etc.", "Note growth percentages to prioritize", "Create content around trending terms", "Verify trends at Google Trends"]} features={["15+ Trending Keywords", "Category Filters", "YoY Growth Data", "Topic Categories", "Real-Time Relevance"]} faqs={[{ question: "How do I use trending keywords?", answer: "Create timely content around trending terms before they peak. Early movers capture significant traffic. Use these keywords in blog posts, social media, and YouTube videos." }]} relatedTools={[{ name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }, { name: "Long Tail Keywords", emoji: "🐟", path: "/tools/long-tail-keywords" }]} />
         </div>
     );

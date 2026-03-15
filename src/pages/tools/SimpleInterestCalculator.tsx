@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const SimpleInterestCalculator = () => {
     const [mode, setMode] = useState<"si" | "ci">("si");
@@ -139,8 +138,8 @@ const SimpleInterestCalculator = () => {
 </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

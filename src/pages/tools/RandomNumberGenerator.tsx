@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const RandomNumberGenerator = () => {
     const [min, setMin] = useState("1");
@@ -114,7 +113,7 @@ const RandomNumberGenerator = () => {
             )}
 
             <SEOHead title="Random Number Generator - Free Online RNG Tool" description="Generate random numbers between any range instantly. Create unique lottery numbers, passwords, and more with our free random number generator." keywords="random number generator, random number, rng online, lottery number generator, random numbers free" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Random Number Generator", "applicationCategory": "UtilityApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Random Number Generator" subtitle="True Randomness at Your Fingertips" description="Generate single or multiple random numbers in any range. Perfect for lottery picks, decisions, simulations, giveaways, and more." howToUse={["Set minimum and maximum values", "Choose how many numbers to generate", "Enable 'No Duplicates' for unique numbers", "Click Generate Numbers", "Copy results to clipboard"]} features={["Custom Range (Min-Max)", "Multiple Numbers at Once", "Unique/No Duplicate Mode", "Lottery Preset", "Copy All Feature"]} faqs={[{ question: "Are these truly random numbers?", answer: "Our tool uses JavaScript's Math.random(), which is a cryptographically pseudo-random number generator (PRNG). For most purposes like games and decisions, this is perfectly random." }]} relatedTools={[{ name: "Password Generator", emoji: "🔑", path: "/tools/password" }, { name: "Lorem Ipsum", emoji: "📝", path: "/tools/lorem-ipsum" }]} />
         </div>
     );

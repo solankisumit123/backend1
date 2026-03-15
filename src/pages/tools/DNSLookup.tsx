@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 import { lookupDNS, type DNSRecord } from "@/lib/api";
 import { useAuth } from "@/lib/AuthContext";
-import AdBanner from "../../components/AdBanner";
 
 const DNSLookup = () => {
   const [domain, setDomain] = useState("");

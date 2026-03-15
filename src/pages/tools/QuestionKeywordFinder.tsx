@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const questionPrefixes = ["What is", "What are", "What does", "How to", "How does", "How can", "How many", "How much", "Why is", "Why does", "Why should", "When to", "When should", "Where to", "Where can", "Which is", "Which are", "Can I", "Should I", "Is it possible to", "What are the best", "What are the benefits of", "What are the types of", "How to use", "How to improve", "How to fix", "How to get", "How to create"];
 
@@ -65,7 +64,7 @@ const QuestionKeywordFinder = () => {
             )}
 
             <SEOHead title="Question Keyword Finder - FAQ Content Generator" description="Generate question-based keywords for FAQ pages, featured snippets, and voice search optimization." keywords="question keywords, people also ask, faq keywords, question keyword finder" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Question Keyword Finder", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Question Keyword Finder" subtitle="Target Voice Search & Featured Snippets" description="Question keywords are perfect for winning featured snippets on Google. Generate What, How, Why, When, Where questions for any topic." howToUse={["Enter your topic/keyword", "Click Generate", "Get 28+ question variations", "Copy and use in FAQ sections", "Target for featured snippets"]} features={["28+ Question Prefixes", "What/How/Why/When/Where", "Voice Search Optimization", "FAQ Content Ideas", "Copy All Feature"]} faqs={[{ question: "Why use question keywords?", answer: "Question keywords match how people actually search, especially on mobile and voice. They're ideal for FAQ sections and winning Google's featured snippets." }]} relatedTools={[{ name: "Long Tail Keywords", emoji: "🐟", path: "/tools/long-tail-keywords" }, { name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }]} />
         </div>
     );

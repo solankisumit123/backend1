@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const WaterIntakeCalculator = () => {
     const [weight, setWeight] = useState("");
@@ -132,7 +131,7 @@ const WaterIntakeCalculator = () => {
                 <p>Find out exactly <strong>how much water you should drink per day</strong> based on your weight, activity level, and climate. Our calculator provides a personalized hydration schedule to keep you healthy.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: water intake calculator, how much water should I drink, daily water requirement, hydration calculator, water consumption calculator, drinking water per day.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

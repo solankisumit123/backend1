@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { ArrowLeft, MapPin, Loader2, Globe } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 interface IPResult {
     ip: string;

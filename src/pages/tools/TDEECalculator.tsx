@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const TDEECalculator = () => {
     const [gender, setGender] = useState<"male" | "female">("male");
@@ -149,7 +148,7 @@ const TDEECalculator = () => {
                 <p>Calculate your <strong>TDEE</strong> using the Mifflin-St Jeor equation. Find out how many calories you burn daily based on your age, gender, weight, height, and activity level. Get personalized calorie targets for weight loss, maintenance, or muscle gain.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: tdee calculator, total daily energy expenditure, bmr calculator, daily calorie calculator, weight loss calories, macro calculator, mifflin st jeor.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

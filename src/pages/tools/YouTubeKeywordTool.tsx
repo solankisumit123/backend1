@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ytKeywords: Record<string, string[]> = {
     "cooking": ["easy recipes", "cooking for beginners", "quick dinner ideas", "healthy meal prep", "homemade pizza", "one pot meals", "5 ingredient recipes", "vegan cooking"],
@@ -83,7 +82,7 @@ const YouTubeKeywordTool = () => {
             )}
 
             <SEOHead title="YouTube Keyword Tool - Free YouTube SEO Keywords" description="Find the best YouTube keywords for your videos. Optimize video titles, descriptions and tags with our free YouTube keyword research tool." keywords="youtube keyword tool, youtube seo, youtube tags generator, video keywords, youtube keyword research" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "YouTube Keyword Tool", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="YouTube Keyword Tool" subtitle="Rank Higher on YouTube Search" description="YouTube is the world's second-largest search engine. Use our YouTube keyword tool to discover tags and titles that will help your videos rank higher." howToUse={["Enter your video topic or niche", "Click Search to generate keywords", "Browse 24+ YouTube-specific keywords", "Click any keyword to copy it", "Use tags in your YouTube video"]} features={["24+ YouTube Keywords", "Niche-Specific Tags", "Hashtag Format", "Copy All Feature", "Popular Niche Examples"]} faqs={[{ question: "How do YouTube keywords work?", answer: "YouTube keywords in titles, descriptions, and tags help YouTube understand your video content and match it to user searches. More relevant keywords = higher rankings." }]} relatedTools={[{ name: "Hashtag Generator", emoji: "#️⃣", path: "/tools/hashtags" }, { name: "YouTube Stats", emoji: "📊", path: "/tools/youtube-stats" }]} />
         </div>
     );

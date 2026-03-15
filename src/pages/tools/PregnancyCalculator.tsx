@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const PregnancyCalculator = () => {
     const [lmpDate, setLmpDate] = useState("");
@@ -111,7 +110,7 @@ const PregnancyCalculator = () => {
             )}
 
             <SEOHead title="Pregnancy Calculator - Due Date Calculator Online" description="Calculate your pregnancy due date, weeks pregnant, and trimester. Get a complete pregnancy milestone timeline with our free due date calculator." keywords="pregnancy calculator, due date calculator, weeks pregnant calculator, pregnancy milestone calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pregnancy Calculator", "applicationCategory": "HealthApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Pregnancy Due Date Calculator" subtitle="Track Your Pregnancy Week by Week" description="Our pregnancy calculator estimates your due date based on the first day of your last menstrual period (LMP). It also shows important milestones throughout your 40-week journey." howToUse={["Enter the first day of your last period", "Click Calculate Due Date", "View your estimated due date", "Check weeks and days pregnant", "Review pregnancy milestones"]} features={["Due Date Calculation", "Weeks & Days Pregnant", "Trimester Indicator", "9 Key Milestones", "Milestone Completion Tracking"]} faqs={[{ question: "How accurate is this calculator?", answer: "This calculator gives an estimate based on a 40-week cycle from LMP. Actual due dates can vary. Always confirm with your gynecologist." }]} relatedTools={[{ name: "BMI Calculator", emoji: "⚖️", path: "/tools/bmi-calculator" }, { name: "Age Calculator", emoji: "🎂", path: "/tools/age-calculator" }]} />
         </div>
     );

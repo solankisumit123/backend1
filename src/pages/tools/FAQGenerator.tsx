@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const FAQGenerator = () => {
     const [topic, setTopic] = useState("");
@@ -108,7 +107,7 @@ const FAQGenerator = () => {
             )}
 
             <SEOHead title="FAQ Generator - Frequently Asked Questions Creator" description="Generate FAQs for any topic instantly. Get complete Q&A pairs with JSON-LD FAQ schema markup to improve your Google search snippets." keywords="faq generator, faq creator, frequently asked questions generator, faq schema generator, seo faq tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "FAQ Generator", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="FAQ Generator Tool" subtitle="Create SEO-Optimized FAQs Instantly" description="FAQ sections boost SEO by targeting People Also Ask results and improving content depth. Our tool creates complete FAQ pairs and FAQ schema markup for immediate use." howToUse={["Enter your topic or service", "Choose how many FAQs to generate", "Click Generate FAQs", "Copy all FAQs for your content", "Or copy FAQ Schema for structured data"]} features={["Up to 12 FAQ Pairs", "Smart Answer Templates", "One-Click FAQ Schema Copy", "JSON-LD Schema Markup", "Instant Copy All Feature"]} faqs={[{ question: "What is FAQ Schema?", answer: "FAQ Schema is JSON-LD structured data that tells Google you have an FAQ section. When implemented, Google can show your FAQs directly in search results as rich snippets." }]} relatedTools={[{ name: "Schema Generator", emoji: "🔧", path: "/tools/schema" }, { name: "Blog Topic Generator", emoji: "💡", path: "/tools/blog-topic-generator" }]} />
         </div>
     );

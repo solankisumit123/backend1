@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const KeywordDensity = () => {
   const [text, setText] = useState("");

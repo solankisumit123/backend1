@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, ArrowRightLeft } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 
 const Base64Tool = () => {

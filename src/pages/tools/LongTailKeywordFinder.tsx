@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const modifiers = {
     question: ["how to", "what is", "why is", "when to", "where to", "which is best", "can you", "is it possible to"],
@@ -83,7 +82,7 @@ const LongTailKeywordFinder = () => {
             )}
 
             <SEOHead title="Long Tail Keyword Finder - Free SEO Tool" description="Generate 30+ long-tail keywords from any seed keyword. Find low-competition, high-converting long-tail keywords for SEO." keywords="long tail keyword finder, long tail keywords, keyword generator, seo keywords" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Long Tail Keyword Finder", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Long Tail Keyword Generator" subtitle="Find Low-Competition Keywords That Convert" description="Long-tail keywords are longer, more specific phrases that visitors use when they're closer to making a purchase. Our tool generates 30+ variations." howToUse={["Enter a seed keyword", "Click Generate", "Browse 30+ long-tail suggestions", "Copy individual or all keywords", "Use in your content strategy"]} features={["30+ keyword variations", "Question-based keywords", "Location modifiers", "Intent-based keywords", "One-click copy"]} faqs={[{ question: "Why target long-tail keywords?", answer: "Long-tail keywords have lower competition and higher conversion rates. They're easier to rank for and attract more qualified traffic." }]} relatedTools={[{ name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }, { name: "Keyword Density", emoji: "📊", path: "/tools/keyword-density" }]} />
         </div>
     );

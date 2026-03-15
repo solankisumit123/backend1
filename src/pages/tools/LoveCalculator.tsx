@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const calcLove = (a: string, b: string) => {
     const str = (a + b).toLowerCase().replace(/\s/g, "");
@@ -102,8 +101,8 @@ const LoveCalculator = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ChurnRateCalculator = () => {
     const [customersStart, setCustomersStart] = useState("");
@@ -83,7 +82,7 @@ const ChurnRateCalculator = () => {
             )}
 
             <SEOHead title="Churn Rate Calculator - Customer Retention Calculator" description="Calculate monthly churn rate, retention rate, and customer lifetime value (LTV). Free SaaS churn calculator for subscription businesses." keywords="churn rate calculator, customer churn, retention rate calculator, ltv calculator, saas churn" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Churn Rate Calculator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Churn Rate Calculator" subtitle="Reduce Churn, Grow Revenue" description="Customer churn is the silent killer of subscription businesses. Our calculator helps you measure churn rate, retention rate, and customer lifetime value to make informed retention decisions." howToUse={["Enter customers at period start", "Enter customers lost in the period", "Add ARPU for LTV calculation (optional)", "Click Calculate Churn Rate", "Compare against benchmarks"]} features={["Churn Rate Percentage", "Retention Rate", "Customer LTV (optional)", "Industry Benchmarks", "Color-Coded Performance"]} faqs={[{ question: "What causes high churn?", answer: "High churn is caused by poor onboarding, lack of customer success support, pricing issues, or product-market fit problems. Focus on the first 30-90 days of customer experience." }]} relatedTools={[{ name: "MRR Calculator", emoji: "📡", path: "/tools/mrr-calculator" }, { name: "ROI Calculator", emoji: "💹", path: "/tools/roi-calculator" }]} />
         </div>
     );

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const PFCalculator = () => {
     const [basicSalary, setBasicSalary] = useState("");
@@ -154,7 +153,7 @@ const PFCalculator = () => {
                 <p>Calculate your <strong>Provident Fund (EPF) retirement corpus</strong> based on current salary, age, and expected annual increments. Our PF calculator uses the latest {PF_RATE}% interest rate and shows both employee and employer contributions.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: pf calculator, epf calculator india, provident fund calculator, retirement corpus calculator, employee pf, epfo calculator, pf interest rate 2024.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 const ColorPicker = () => {
     const [hex, setHex] = useState("#4285F4");
@@ -113,8 +112,8 @@ const ColorPicker = () => {
             </div>
 
             {/* ── AD BANNERS ── */}
-            <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-            <AdBanner dataAdSlot="9126806975" dataAdFormat="rectangle" />
+            
+            
 
         </div>
     );

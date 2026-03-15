@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, Minimize2, Maximize2 } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const JSONFormatter = () => {
     const [input, setInput] = useState("");

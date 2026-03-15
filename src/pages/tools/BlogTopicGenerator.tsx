@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 import { generateNvidiaAI } from "@/lib/nvidiaAI";
 
 const BlogTopicGenerator = () => {
@@ -120,7 +119,7 @@ const BlogTopicGenerator = () => {
             )}
 
             <SEOHead title="Blog Topic Generator - SEO Blog Ideas Free AI" description="Generate endless blog topic ideas for your niche using artificial intelligence. Find SEO friendly listicles, guides, and how-tos instantly." keywords="blog topic generator, ai blog ideas, seo blog title generator, blog idea maker, content marketing tools" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AI Blog Topic Generator", "applicationCategory": "WritingApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="AI Blog Topic Generator" subtitle="Never Run Out of Content Ideas" description="Struggling with writer's block? Our AI blog topic generator creates highly engaging, SEO-optimized blog titles for any industry." howToUse={["Enter your target keyword or subject", "Select your industry for context", "Pick the blog post format you prefer", "Click Generate Topics", "Browse 10 unique AI-generated ideas"]} features={["Real AI Generation", "Targeted by Niche", "Format Selection", "SEO Optimized Concepts", "Instantly Copiable"]} faqs={[{ question: "How does the AI create blog topics?", answer: "The AI understands proven content marketing frameworks and analyzes your keyword against successful article patterns like listicles or ultimate guides." }]} relatedTools={[{ name: "Headline Generator", emoji: "✏️", path: "/tools/headline-generator" }, { name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }]} />
         </div>
     );

@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthProvider } from "@/lib/AuthContext";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Tools from "./pages/Tools";
@@ -20,7 +22,7 @@ import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CookieBanner from "./components/CookieBanner";
-import AdBanner from "./components/AdBanner";
+import BackgroundDecorations from "./components/BackgroundDecorations";
 
 // Core SEO Tools (FREE)
 import SeoAudit from "./pages/tools/SeoAudit";
@@ -196,41 +198,26 @@ import ScrollToMain from "./components/ScrollToMain";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <CookieBanner />
           <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <ScrollToMain />
             <RouteSEO />
-            <div className="min-h-screen flex flex-col" style={{ contain: 'layout' }}>
-              <Navbar darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)} />
-              <div className="container mx-auto px-4 mt-4 flex justify-center">
-                <AdBanner width={728} height={90} bannerId="28752282" />
-              </div>
+            <div className="min-h-screen flex flex-col gradient-bg relative overflow-hidden">
+              <div className="bg-noise"></div>
+              <BackgroundDecorations />
+              <Navbar />
 
+              <div className="flex-1 flex w-full max-w-[1600px] mx-auto px-4 gap-6 relative z-10">
+                {/* Fixed Sidebar is now handled globally */}
+                <Sidebar />
 
-
-              <Breadcrumbs />
-
-              <div className="flex-1 flex w-full max-w-[1600px] mx-auto relative z-0">
-                {/* LEFT sidebar */}
-                <aside className="hidden lg:block w-[160px] shrink-0 px-2 py-8">
-                  <div className="sticky top-24">
-                    <AdBanner keyId="c466fee662c8bcf9da12b50d3f6b58dc" bannerId="28752282" width={160} height={600} />
-                  </div>
-                </aside>
-
-                <main id="main-content" className="flex-1 min-w-0" style={{ minHeight: '60vh' }}>
+                <main id="main-content" className="flex-1 min-w-0 pb-16 pt-4 relative z-20 md:pl-28" style={{ minHeight: '60vh' }}>
+                  <Breadcrumbs />
                   <Routes>
                     {/* Main pages */}
                     <Route path="/" element={<Index />} />
@@ -427,19 +414,17 @@ const App = () => {
                   </Routes>
                 </main>
 
-                {/* RIGHT sidebar */}
-                <aside className="hidden lg:block w-[160px] shrink-0 px-2 py-8">
-                  <div className="sticky top-24">
-                    <AdBanner keyId="c466fee662c8bcf9da12b50d3f6b58dc" bannerId="28752282" width={160} height={600} />
-                  </div>
-                </aside>
-
 
               </div>
               <footer
-                className="w-full py-6 border-t-4 border-border text-center bg-card"
+                className="w-full py-6 mt-12 bg-white/20 backdrop-blur-md border-t border-white/40 text-center relative z-20"
                 style={{ minHeight: '100px', contain: 'layout size' }}
               >
+                <div className="flex justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-white/40">
+                    <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
+                  </div>
+                </div>
                 <p className="text-sm text-muted-foreground font-bold">
                   © {new Date().getFullYear()} WebInsight Pro. All rights reserved.
                 </p>

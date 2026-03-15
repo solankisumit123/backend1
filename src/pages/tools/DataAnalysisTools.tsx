@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 import FAQSchema from "@/components/SEO/FAQSchema";
-import AdBanner from "../../components/AdBanner";
 
 const toolData = [
   {
@@ -122,7 +121,7 @@ const DataAnalysisTools = () => {
         ))}
       </div>
 
-      <AdBanner />
+      
 
       <div className="prose prose-comic max-w-none mb-12">
         <h2 className="comic-heading text-3xl mb-6">Why You Need Proper Tools of Data Analysis</h2>

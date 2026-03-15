@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const YouTubeChannelStats = () => {
     const [channelUrl, setChannelUrl] = useState("");
@@ -100,7 +99,7 @@ const YouTubeChannelStats = () => {
                 <p>Analyze any <strong>YouTube channel</strong> to view estimated subscriber count, total views, video count, average views per video, and estimated earnings. Great for creators, marketers, and influencer collaboration research.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: youtube channel statistics, youtube analytics, channel subscriber count, youtube views checker, youtube earnings estimator, youtube channel analyzer.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

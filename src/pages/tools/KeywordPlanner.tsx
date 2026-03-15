@@ -3,7 +3,6 @@ import { ArrowLeft, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const seedData: Record<string, { volume: string; difficulty: string; cpc: string; related: string[] }> = {
     "seo tools": { volume: "135,000", difficulty: "72", cpc: "$4.20", related: ["free seo tools", "best seo tools", "seo checker", "online seo tools", "seo audit tool"] },
@@ -134,7 +133,7 @@ const KeywordPlanner = () => {
                 keywords="keyword planner, keyword research tool, search volume checker, keyword difficulty, cpc checker, free keyword tool"
                 schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Keyword Planner", "applicationCategory": "SEOApplication" }}
             />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection
                 title="Free Keyword Planner Tool"
                 subtitle="Research Keywords Like a Pro"

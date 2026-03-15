@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 import { generateNvidiaAI } from "@/lib/nvidiaAI";
 
 const SocialMediaCaptionGenerator = () => {
@@ -115,7 +114,7 @@ const SocialMediaCaptionGenerator = () => {
             )}
 
             <SEOHead title="Social Media Caption Generator - Instagram LinkedIn Twitter" description="Generate engaging social media captions with AI for Instagram, LinkedIn, and Twitter." keywords="social media caption generator, ai caption generator, instagram caption generator, linkedin post generator, twitter caption tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Social Media Caption Generator", "applicationCategory": "SocialMediaApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="AI Social Media Caption Generator" subtitle="Captions That Drive Engagement" description="Great captions transform ordinary posts into viral content. Our AI generator creates highly engaging, platform-optimized captions tailored to your audience." howToUse={["Enter your post topic", "Select your social media platform", "Choose a writing tone", "Click Generate Captions", "The AI writes 5 custom captions. Copy and post!"]} features={["Instagram, LinkedIn & Twitter Profiles", "Real AI Generation", "Variety of Tones", "Contextual Hashtags", "Instant Copy-Paste"]} faqs={[{ question: "What makes a great social media caption?", answer: "Great captions start with a strong hook, provide emotion or value, include a clear call-to-action, and use smart hashtags." }]} relatedTools={[{ name: "Hashtag Generator", emoji: "#️⃣", path: "/tools/hashtags" }, { name: "Instagram Bio", emoji: "📸", path: "/tools/instagram-bio-generator" }]} />
         </div>
     );

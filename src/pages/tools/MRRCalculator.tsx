@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const MRRCalculator = () => {
     const [plans, setPlans] = useState([
@@ -90,7 +89,7 @@ const MRRCalculator = () => {
             )}
 
             <SEOHead title="MRR Calculator - Monthly Recurring Revenue Calculator" description="Calculate MRR, ARR, churned MRR, and net new MRR for your SaaS business. Free Monthly Recurring Revenue calculator for startups." keywords="mrr calculator, monthly recurring revenue, arr calculator, saas metrics, recurring revenue calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MRR Calculator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="MRR Calculator" subtitle="SaaS Revenue Metrics Simplified" description="MRR (Monthly Recurring Revenue) is the lifeblood metric for SaaS businesses. Track your recurring revenue, annual run rate, and churn impact with our free calculator." howToUse={["Enter pricing plan names and prices", "Add number of customers per plan", "Input monthly churn rate", "Click Calculate MRR", "View MRR, ARR, and churned MRR"]} features={["3 Pricing Plan Support", "Churn Rate Impact", "ARR Calculation", "Net MRR After Churn", "SaaS-Focused Metrics"]} faqs={[{ question: "What's the difference between MRR and ARR?", answer: "MRR is your monthly recurring revenue. ARR (Annual Recurring Revenue) = MRR × 12. ARR is used for company valuation and annual planning." }]} relatedTools={[{ name: "SaaS Pricing Calculator", emoji: "💰", path: "/tools/saas-pricing-calculator" }, { name: "Churn Rate Calculator", emoji: "🔄", path: "/tools/churn-rate-calculator" }]} />
         </div>
     );

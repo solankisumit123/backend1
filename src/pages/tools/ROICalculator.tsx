@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ROICalculator = () => {
     const [investment, setInvestment] = useState("");
@@ -79,7 +78,7 @@ const ROICalculator = () => {
             )}
 
             <SEOHead title="ROI Calculator - Return on Investment Calculator Free" description="Calculate ROI for marketing campaigns, investments, or any business activity. Get net profit, ROI percentage, and annual return calculations." keywords="roi calculator, return on investment calculator, marketing roi, campaign roi calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "ROI Calculator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="ROI Calculator" subtitle="Know If Your Investments Are Profitable" description="ROI (Return on Investment) measures the profitability of any investment. Whether you're analyzing a marketing campaign, stock purchase, or business expense, our ROI calculator gives you instant clarity." howToUse={["Enter your total investment amount", "Enter total returns generated", "Select the time period", "Click Calculate ROI", "View net profit and annual ROI"]} features={["ROI Percentage", "Net Profit", "Annual ROI Projection", "Profitable/Loss Status", "Multiple Time Periods"]} faqs={[{ question: "What is a good ROI?", answer: "A good ROI depends on the investment type. For stock market, 7-10% annual ROI is good. For digital marketing, 400-500% ROI is achievable. Any positive ROI means you're profitable." }]} relatedTools={[{ name: "CTR Calculator", emoji: "👆", path: "/tools/ctr-calculator" }, { name: "Conversion Rate", emoji: "📊", path: "/tools/conversion-rate-calculator" }]} />
         </div>
     );

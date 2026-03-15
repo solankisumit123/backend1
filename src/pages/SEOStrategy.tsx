@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import FAQSchema from "@/components/SEO/FAQSchema";
-import AdBanner from "@/components/AdBanner";
 
 /* ─── SEO Strategy for 1M Daily Visitors ─── */
 const phases = [
@@ -164,7 +163,7 @@ const SEOStrategy = () => {
           </p>
         </div>
 
-        <AdBanner width={728} height={90} bannerId="28752282" />
+        
 
         {/* Key Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
@@ -202,7 +201,7 @@ const SEOStrategy = () => {
           ))}
         </div>
 
-        <AdBanner width={728} height={90} bannerId="28752282" />
+        
 
         {/* Quick Wins */}
         <div className="comic-card border-4 border-border p-6 mb-16">
@@ -266,7 +265,7 @@ const SEOStrategy = () => {
           ))}
         </div>
 
-        <AdBanner width={728} height={90} bannerId="28752282" />
+        
       </div>
     </div>
   );

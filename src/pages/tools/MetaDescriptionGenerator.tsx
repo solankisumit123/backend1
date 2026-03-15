@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const MetaDescriptionGenerator = () => {
     const [topic, setTopic] = useState("");
@@ -114,7 +113,7 @@ const MetaDescriptionGenerator = () => {
             )}
 
             <SEOHead title="Meta Description Generator - Free SEO Description Tool" description="Generate click-worthy meta descriptions for any web page. Create compelling, keyword-rich descriptions under 155 characters with our free tool." keywords="meta description generator, seo description tool, meta description writer, page description generator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Meta Description Generator", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Meta Description Generator" subtitle="Write Descriptions That Get More Clicks" description="A well-written meta description can significantly increase your click-through rate from search results. Our generator creates multiple description styles with real-time character counting." howToUse={["Enter your page topic", "Add your target keyword", "Choose a writing style", "Click Generate Descriptions", "Copy the best description"]} features={["Multiple Writing Styles", "155-Character Limit Tracking", "Keyword Integration", "Copy Individual Descriptions", "Real-time Length Indicator"]} faqs={[{ question: "What's the ideal meta description length?", answer: "Google typically shows 155-160 characters. Keep descriptions under 155 characters to prevent truncation. Include your primary keyword naturally." }]} relatedTools={[{ name: "Meta Title Generator", emoji: "📝", path: "/tools/meta-title-generator" }, { name: "SERP Preview", emoji: "👁️", path: "/tools/serp-preview" }]} />
         </div>
     );

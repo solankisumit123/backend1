@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const amzKeywords: Record<string, string[]> = {
     "laptop": ["gaming laptop", "laptop under 50000", "best laptop 2025", "thin light laptop", "laptop for students", "laptop with ssd", "laptop with backlit keyboard", "ultrabook"],
@@ -82,7 +81,7 @@ const AmazonKeywordTool = () => {
             )}
 
             <SEOHead title="Amazon Keyword Tool - Free Amazon Product Keywords" description="Find high-converting Amazon keywords for product listings and affiliate marketing. Optimize your Amazon SEO with our free keyword tool." keywords="amazon keyword tool, amazon seo keywords, amazon product keywords, amazon affiliate keywords" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Amazon Keyword Tool", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Amazon Keyword Tool" subtitle="Rank Higher on Amazon Search" description="Amazon is the world's largest product search engine. Our tool helps Amazon sellers and affiliates find the most searched product keywords to increase visibility and sales." howToUse={["Enter your product category", "Click Search", "Browse 22+ Amazon keywords", "Click any keyword to copy", "Use in product titles and descriptions"]} features={["22+ Product Keywords", "Category-Specific Suggestions", "Buyer Intent Keywords", "Price-Based Keywords", "Amazon-Optimized Terms"]} faqs={[{ question: "How do Amazon keywords affect sales?", answer: "Amazon ranks products based on keyword relevance. Using the right keywords in your product title, bullet points, and backend keywords significantly increases visibility and sales." }]} relatedTools={[{ name: "YouTube Keyword Tool", emoji: "▶️", path: "/tools/youtube-keyword" }, { name: "Keyword Planner", emoji: "🔑", path: "/tools/keyword-planner" }]} />
         </div>
     );

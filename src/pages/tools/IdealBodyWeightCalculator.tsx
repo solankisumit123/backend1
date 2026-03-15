@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const IdealBodyWeightCalculator = () => {
     const [gender, setGender] = useState<"male" | "female">("male");
@@ -133,7 +132,7 @@ const IdealBodyWeightCalculator = () => {
                 <p>Calculate your <strong>ideal body weight</strong> using four scientific formulas: Robinson, Miller, Devine, and Hamwi. Accounts for gender, height, and body frame size. Also shows BMI-based healthy weight range.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: ideal body weight calculator, ideal weight for height, healthy weight calculator, robinson formula, devine formula, ibw calculator.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

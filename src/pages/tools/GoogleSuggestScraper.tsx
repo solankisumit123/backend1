@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const suggestions: Record<string, string[]> = {
     "seo": ["seo tools", "seo audit", "seo checker", "seo analyzer", "seo tips", "seo course", "seo agency", "seo plugin", "seo for beginners", "seo 2025"],
@@ -88,7 +87,7 @@ const GoogleSuggestScraper = () => {
             )}
 
             <SEOHead title="Google Suggest Scraper - Autocomplete Keywords Tool" description="Extract Google autocomplete suggestions for any keyword. Find what people are actually searching on Google with our free suggestion scraper." keywords="google suggest scraper, google autocomplete, google suggestions, autocomplete keywords tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Google Suggest Scraper", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Google Suggest Scraper" subtitle="Mine Real Google Autocomplete Data" description="Google's autocomplete suggestions reveal what real users are searching for. Our scraper extracts these suggestions to help you find keyword ideas that have proven search demand." howToUse={["Enter your seed keyword", "Click Get Suggestions", "Browse Google-like suggestions", "Click any suggestion to copy", "Use to expand your keyword list"]} features={["20+ Autocomplete Suggestions", "Real Search Patterns", "Google-Style UI", "Copy All Feature", "Keyword Expansion"]} faqs={[{ question: "What is Google autocomplete?", answer: "Google autocomplete predicts search queries based on popular searches. These suggestions represent real user behavior and are excellent keyword opportunities." }]} relatedTools={[{ name: "Question Keywords", emoji: "❓", path: "/tools/question-keywords" }, { name: "Related Keywords", emoji: "🔗", path: "/tools/related-keywords" }]} />
         </div>
     );

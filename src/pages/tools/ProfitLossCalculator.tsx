@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const ProfitLossCalculator = () => {
     const [costPrice, setCostPrice] = useState("");
@@ -108,7 +107,7 @@ const ProfitLossCalculator = () => {
                 </ul>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: profit loss calculator, profit percentage calculator, markup calculator, profit margin calculator, business calculator india, cp sp formula.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

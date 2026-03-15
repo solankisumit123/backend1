@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, Volume2, Square } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 const TextToSpeech = () => {
     const [text, setText] = useState("");
@@ -80,8 +79,8 @@ const TextToSpeech = () => {
 </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

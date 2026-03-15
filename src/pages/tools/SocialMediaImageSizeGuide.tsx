@@ -1,7 +1,6 @@
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import AdBanner from "../../components/AdBanner";
 
 const platforms = [
     {
@@ -147,7 +146,7 @@ const SocialMediaImageSizeGuide = () => {
                 <p>Find the <strong>correct image dimensions</strong> for every social media platform including Instagram, Facebook, Twitter/X, YouTube, LinkedIn, TikTok, Pinterest, and WhatsApp. All sizes are updated for 2024-25.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: social media image size guide, instagram image size, facebook cover photo size, twitter header size, youtube thumbnail size, linkedin banner size, social media dimensions 2024.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

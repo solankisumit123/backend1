@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const RetirementCalculator = () => {
     const [currentAge, setCurrentAge] = useState("");
@@ -128,7 +127,7 @@ const RetirementCalculator = () => {
             )}
 
             <SEOHead title="Retirement Calculator - Plan Your Retirement Corpus" description="Calculate how much you need for retirement. Find out your retirement corpus, monthly income, and whether you're on track with our free retirement planner." keywords="retirement calculator, retirement corpus calculator, retirement planning india, retirement savings calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Retirement Calculator", "applicationCategory": "FinanceApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Retirement Calculator" subtitle="Plan Your Financial Independence" description="Our retirement calculator helps you determine if your current savings rate will meet your retirement goals. It accounts for inflation, investment returns, and withdrawal rates." howToUse={["Enter your current and target retirement age", "Input current savings and monthly contributions", "Set expected annual return rate", "Enter current monthly expenses", "Click Plan My Retirement"]} features={["Corpus Projection", "Monthly Retirement Income (4% Rule)", "Inflation-Adjusted Target", "Shortfall/Surplus Analysis", "Personalized Recommendations"]} faqs={[{ question: "How much corpus do I need?", answer: "A common rule is to accumulate 25x your annual expenses (4% withdrawal rule). Our calculator uses inflation-adjusted expenses to give you a realistic target." }]} relatedTools={[{ name: "SIP Calculator", emoji: "💹", path: "/tools/sip-calculator" }, { name: "Compound Interest", emoji: "📈", path: "/tools/compound-interest" }]} />
         </div>
     );

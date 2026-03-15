@@ -6,7 +6,6 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import AdBanner from "@/components/AdBanner";
 
 interface FAQItem {
     question: string;
@@ -34,7 +33,7 @@ const SEOSection = ({
 }: SEOSectionProps) => {
     return (
         <div className="w-full max-w-4xl mx-auto mt-24 space-y-16 pb-16 px-4">
-            <AdBanner width={728} height={90} bannerId="28752282" />
+            
             {/* Main Content Section */}
             <div className="comic-card bg-card p-8 border-4 border-border">
                 <h2 className="text-3xl font-black mb-4 text-foreground">{title}</h2>
@@ -78,7 +77,7 @@ const SEOSection = ({
                     </div>
                 </div>
             </div>
-            <AdBanner width={728} height={90} bannerId="28752282" />
+            
 
             {/* FAQ Section */}
             <div className="space-y-6">
@@ -101,7 +100,7 @@ const SEOSection = ({
                     </Accordion>
                 </div>
             </div>
-            <AdBanner width={728} height={90} bannerId="28752282" />
+            
 
             {/* Related Tools Section */}
             <div className="space-y-8 pt-8">
@@ -119,7 +118,7 @@ const SEOSection = ({
                     ))}
                 </div>
             </div>
-            <AdBanner width={728} height={90} bannerId="28752282" />
+            
         </div>
     );
 };

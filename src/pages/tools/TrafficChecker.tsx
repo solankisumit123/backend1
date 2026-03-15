@@ -4,7 +4,6 @@ import { Search, Loader2, ArrowLeft, BarChart3, TrendingUp, Users, DollarSign, G
 import ScoreCard from "@/components/ScoreCard";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 interface TrafficData {
     domain: string;

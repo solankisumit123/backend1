@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ToolCard from "@/components/ToolCard";
-import AdBanner from "@/components/AdBanner";
 import { useState } from "react";
 import {
   Search, DollarSign, Gauge, Tag, Type, Link2, BarChart3,
@@ -220,9 +219,19 @@ const categories = [
   },
 ];
 
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+
 const Tools = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const allCombinedCategories = [...categories, ...massiveToolsList];
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setSearchQuery(q);
+  }, [searchParams]);
+
   const total = allCombinedCategories.reduce((sum, c) => sum + c.tools.length, 0);
 
   const query = searchQuery.toLowerCase().trim();
@@ -250,21 +259,28 @@ const Tools = () => {
     : allCombinedCategories;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="comic-heading text-4xl md:text-5xl text-foreground mb-2 text-center">🛠️ All Tools</h1>
-      <p className="text-center text-muted-foreground font-bold mb-6">{total} powerful tools — all free to use!</p>
-      <div className="flex justify-center"><AdBanner width={728} height={90} bannerId="28752282" /></div>
+    <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-black text-secondary mb-6 leading-tight">
+          WebInsight <span className="text-primary italic">Pro</span>
+        </h1>
+        <p className="text-xl text-secondary/60 font-bold max-w-2xl mx-auto">
+          Explore {total}+ premium utilities across all categories. From SEO and marketing 
+          to productivity and finance—we've got everything you need.
+        </p>
+      </div>
 
       {/* ═══ Search Bar ═══ */}
-      <div className="max-w-xl mx-auto mb-10">
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+      <div className="max-w-2xl mx-auto mb-20 animate-slide-up" style={{ animationDelay: '200ms' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+          <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-primary pointer-events-none z-10" />
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            placeholder="🔍 Search tools... (e.g. GST, password, image, gradient)"
-            className="w-full border-4 border-border rounded-2xl pl-12 pr-12 py-4 bg-card text-foreground font-bold text-lg focus:outline-none focus:border-comic-blue transition-colors shadow-lg placeholder:text-muted-foreground/60"
+            placeholder="Search for tools (e.g. SEO Audit, GST, Password)..."
+            className="w-full bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[2rem] pl-16 pr-14 py-5 text-secondary font-bold text-lg outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary/50 transition-all shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] placeholder:text-secondary/40 relative z-0"
           />
           {searchQuery && (
             <button
@@ -276,9 +292,9 @@ const Tools = () => {
           )}
         </div>
         {query && (
-          <div className="text-center mt-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-comic-blue/10 text-comic-blue text-sm font-black">
-              {filteredTools.length} tool{filteredTools.length !== 1 ? "s" : ""} found for "{searchQuery}"
+          <div className="text-center mt-6">
+            <span className="inline-flex items-center px-6 py-2 rounded-full bg-primary/10 text-primary text-sm font-black border border-primary/20 animate-fade-in">
+               Found {filteredTools.length} tool{filteredTools.length !== 1 ? "s" : ""}
             </span>
           </div>
         )}
@@ -299,22 +315,24 @@ const Tools = () => {
 
       {/* ═══ Tool Categories ═══ */}
       {(query ? filteredCategories : allCombinedCategories).map((cat, ci) => (
-        <div key={ci} className="mb-10">
-          <div className="flex items-center gap-3 mb-5">
-            <h2 className="comic-heading text-2xl md:text-3xl text-foreground">{cat.title}</h2>
-            {query && (
-              <span className="px-2 py-0.5 rounded-full bg-comic-blue/10 text-comic-blue text-xs font-black">
-                {cat.tools.length}
-              </span>
-            )}
+        <div key={ci} className="mb-20 last:mb-0">
+          <div className="flex items-center gap-4 mb-8">
+             <div className="h-10 w-2 rounded-full bg-primary shadow-[0_0_15px_rgba(5,150,105,0.4)]"></div>
+             <h2 className="text-3xl font-black text-secondary tracking-tight">
+               {cat.title}
+             </h2>
+             {query && (
+               <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black border border-primary/20">
+                 {cat.tools.length} Results
+               </span>
+             )}
           </div>
-          {ci % 2 === 0 && <AdBanner width={728} height={90} bannerId="28752282" />}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {cat.tools.map((tool, ti) => (
-              <ToolCard key={ti} {...tool} delay={ti * 60} />
+              <ToolCard key={ti} {...tool} delay={ti * 50} />
             ))}
           </div>
-          {ci % 2 === 1 && <AdBanner width={728} height={90} bannerId="28752282" />}
         </div>
       ))}
 
@@ -332,34 +350,34 @@ const Tools = () => {
         <h3 className="text-2xl font-black mt-8 mb-4">💻 Developer Tools & Content Writing Utilities</h3>
         <p>For programmers and content creators: format JSON, minify CSS & JavaScript, generate cron expressions, check HTTP status codes, create CSS gradients, convert Markdown to HTML, check grammar and readability, rewrite articles, generate fancy text for social media, and much more. All tools process data in your browser for maximum security — your data never leaves your device.</p>
 
-        <h3 className="text-2xl font-black mt-8 mb-4">📈 How to Improve Website Ranking for Free</h3>
-        <p>Looking for <strong>free tools to improve website ranking</strong>? Start with our <strong>SEO Audit</strong> tool, optimize your <strong>on-page SEO</strong> with our Meta Tag Generator, fix broken links, improve <strong>page speed</strong>, build quality backlinks, and create SEO-optimized content with our Grammar Checker and Readability tools. Follow our <strong>step-by-step SEO guide for beginners</strong> to increase organic traffic!</p>
-
-        <h3 className="text-2xl font-black mt-8 mb-4">🔗 Popular Tools — Quick Links</h3>
-        <p className="mb-4 text-muted-foreground font-bold">Explore our most-used free tools. Each link helps Google discover and index our pages.</p>
-        <div className="flex flex-wrap gap-3">
-          {[
-            { name: "SEO Audit", path: "/tools/seo-audit" },
-            { name: "Page Speed", path: "/tools/page-speed" },
-            { name: "GST Calculator", path: "/tools/gst-calculator" },
-            { name: "Income Tax", path: "/tools/income-tax" },
-            { name: "EMI Calculator", path: "/tools/emi-calculator" },
-            { name: "BMI Calculator", path: "/tools/bmi-calculator" },
-            { name: "Traffic Checker", path: "/tools/traffic-checker" },
-            { name: "Keyword Planner", path: "/tools/keyword-planner" },
-            { name: "Word Counter", path: "/tools/word-counter" },
-            { name: "QR Code", path: "/tools/qr-code" },
-          ].map((t) => (
-            <Link key={t.path} to={t.path} className="comic-btn bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 text-sm font-bold rounded-xl transition-colors">
-              {t.name}
-            </Link>
-          ))}
+        <div className="mt-16 pt-12 border-t border-secondary/10">
+          <h3 className="text-xl font-black mb-6 text-secondary uppercase tracking-widest">Popular Quick Links</h3>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { name: "SEO Audit", path: "/tools/seo-audit" },
+              { name: "Page Speed", path: "/tools/page-speed" },
+              { name: "GST Calculator", path: "/tools/gst-calculator" },
+              { name: "Income Tax", path: "/tools/income-tax" },
+              { name: "EMI Calculator", path: "/tools/emi-calculator" },
+              { name: "BMI Calculator", path: "/tools/bmi-calculator" },
+              { name: "Traffic Checker", path: "/tools/traffic-checker" },
+              { name: "Keyword Planner", path: "/tools/keyword-planner" },
+              { name: "Word Counter", path: "/tools/word-counter" },
+              { name: "QR Code", path: "/tools/qr-code" },
+            ].map((t) => (
+              <Link 
+                key={t.path} 
+                to={t.path} 
+                className="comic-btn bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 text-sm font-bold rounded-xl transition-colors"
+              >
+                {t.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <p className="mt-8 text-sm font-bold text-muted-foreground border-t-2 pt-4">Related searches: free seo tools online, online seo checker, website traffic checker, seo analyzer free, seo score checker, backlinks checker free, keyword research tool free, website performance checker, page speed test tool, seo audit tools, rank tracker free, organic traffic estimator, free digital marketing tools, online optimization tools, how to check website seo free, free tools to improve website ranking, best seo audit tools 2026, how to increase organic traffic step by step, free keyword research and analysis tool, on-page seo checklist for beginners, how to get free backlinks for website, website seo performance report free, seo tips for small business websites, what is seo tools and why use them, free seo strategies for startups, step by step seo guide for beginners, seo trends in 2026, best free digital marketing tools list, how to optimize website for search engines, how to improve page speed for seo, seo metrics you must track in 2026, gst calculator, income tax calculator india, emi calculator, bmi calculator, calorie calculator, fancy text generator, qr code generator, json formatter online, currency converter, typing speed test wpm.</p>
       </div>
-      <div className="flex justify.center my-8"><AdBanner width={728} height={90} bannerId="28752282" /></div>
-
     </div>
   );
 };

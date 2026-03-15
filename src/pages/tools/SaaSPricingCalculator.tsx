@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const SaaSPricingCalculator = () => {
     const [plans, setPlans] = useState([
@@ -101,7 +100,7 @@ const SaaSPricingCalculator = () => {
             )}
 
             <SEOHead title="SaaS Pricing Calculator - Subscription Revenue Planner" description="Design SaaS pricing tiers and calculate customers needed to hit your revenue targets. Free SaaS pricing strategy tool for startups." keywords="saas pricing calculator, subscription pricing, saas revenue calculator, pricing tiers, saas mreue planner" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "SaaS Pricing Calculator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="SaaS Pricing Calculator" subtitle="Find the Perfect Price for Your Product" description="Pricing is one of the most critical decisions for a SaaS business. Our calculator helps you design pricing tiers, preview a pricing table, and calculate how many customers you need to hit revenue goals." howToUse={["Set up 3 pricing plans with prices", "Add features for each plan", "Enter your target monthly revenue", "Click Calculate Revenue Target", "See required customers per plan"]} features={["3-Tier Pricing Design", "Live Pricing Table Preview", "Revenue Target Calculator", "Customer Distribution", "Estimated MRR Calculation"]} faqs={[{ question: "How to price a SaaS product?", answer: "Use value-based pricing (charge based on the value delivered), not cost-plus. Research competitors, segment customers by willingness to pay, and offer 3 tiers (Good-Better-Best)." }]} relatedTools={[{ name: "MRR Calculator", emoji: "📡", path: "/tools/mrr-calculator" }, { name: "Churn Rate Calculator", emoji: "🔄", path: "/tools/churn-rate-calculator" }]} />
         </div>
     );

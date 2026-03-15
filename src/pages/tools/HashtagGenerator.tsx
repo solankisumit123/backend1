@@ -1,7 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import AdBanner from "../../components/AdBanner";
 
 const hashtagSets: Record<string, string[]> = {
   seo: ["#SEO", "#DigitalMarketing", "#SearchEngine", "#GoogleRanking", "#SEOtips", "#ContentMarketing", "#OnPageSEO", "#Backlinks", "#KeywordResearch", "#OrganicTraffic"],
@@ -51,8 +50,8 @@ const HashtagGenerator = () => {
       )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="9126806975" dataAdFormat="rectangle" />
+      
+      
 
     </div>
   );

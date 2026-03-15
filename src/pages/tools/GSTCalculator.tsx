@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 import FAQSchema from "@/components/SEO/FAQSchema";
 
 const GSTCalculator = () => {
@@ -156,7 +155,7 @@ const GSTCalculator = () => {
               ))}
             </div>
             <div className="mt-6">
-                <AdBanner dataAdSlot="9274146632" dataAdFormat="auto" />
+                
             </div>
         </div>
     );

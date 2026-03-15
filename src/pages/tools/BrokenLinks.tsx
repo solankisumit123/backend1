@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowLeft, LinkIcon, Loader2, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 interface LinkResult {
     url: string;

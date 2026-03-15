@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
-import AdBanner from "../../components/AdBanner";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
 
@@ -44,8 +43,8 @@ const WordCounter = () => {
       </div>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
       {/* ── SEO SECTION ── */}
       <SEOHead

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const fields = [
     { label: "Minute", range: "0-59", special: ["*", ",", "-", "/"] },
@@ -134,7 +133,7 @@ const CronJobGenerator = () => {
                 <p>Build <strong>cron expressions</strong> visually with our free cron job generator. Use presets or customize each field. Get a human-readable description of your schedule. Works with Linux cron, AWS CloudWatch, GitHub Actions, and more.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: cron job generator, cron expression builder, crontab generator, cron schedule maker, linux cron, cron syntax, cron expression online.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

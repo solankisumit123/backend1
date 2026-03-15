@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRightLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 // Static rates relative to USD (updated periodically)
 const RATES: Record<string, number> = {
@@ -125,7 +124,7 @@ const CurrencyConverter = () => {
                 <p>Convert between <strong>USD to INR, EUR to INR, GBP to INR, AED to INR</strong> and 30+ other currencies instantly. Our currency converter uses regularly updated exchange rates for accurate conversions.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: currency converter, usd to inr, eur to inr, gbp to inr, aed to inr, dollar to rupee, exchange rate calculator, forex converter online free.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

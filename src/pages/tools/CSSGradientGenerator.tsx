@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const CSSGradientGenerator = () => {
     const [color1, setColor1] = useState("#667eea");
@@ -138,7 +137,7 @@ const CSSGradientGenerator = () => {
                 <p>Create beautiful <strong>CSS gradients</strong> with our visual gradient generator. Choose colors, adjust angle, pick presets, and copy the CSS code. Supports both linear and radial gradients.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: css gradient generator, linear gradient maker, radial gradient, background gradient css, gradient color picker, css gradient tool online.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowLeft, Globe, MapPin, Loader2, Server, Globe2, ScanFace, Building, Wifi } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 interface IPData {
     ip: string;
@@ -108,8 +107,8 @@ const MyIPAddress = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3820454060" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

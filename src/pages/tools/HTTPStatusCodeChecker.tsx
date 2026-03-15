@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const statusCodes: { code: number; name: string; desc: string; cat: string }[] = [
     // 1xx
@@ -102,7 +101,7 @@ const HTTPStatusCodeChecker = () => {
                 <p>Complete guide to <strong>HTTP status codes</strong> with explanations. From 200 OK to 500 Internal Server Error — understand what every status code means. Essential for web developers, SEO professionals, and system administrators.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: http status codes, 404 error meaning, 301 redirect, 500 internal server error, http response codes, status code checker, web developer reference.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

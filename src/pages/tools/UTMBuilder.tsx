@@ -4,7 +4,6 @@ import { ArrowLeft, Link2, Copy, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 
 const UTMBuilder = () => {

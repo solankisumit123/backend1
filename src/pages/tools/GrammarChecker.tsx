@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 interface Issue { type: "grammar" | "spelling" | "style" | "punctuation"; word: string; suggestion: string; index: number; message: string; }
 
@@ -143,7 +142,7 @@ const GrammarChecker = () => {
                 <p>Check your text for <strong>grammar mistakes, spelling errors, style issues, and punctuation problems</strong>. Get instant suggestions to improve your writing. Works great for emails, blog posts, essays, and social media content.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: grammar checker, free grammar check online, spelling checker, writing checker, english grammar tool, proofreading tool, grammar corrector.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 import { generateNvidiaAI } from "@/lib/nvidiaAI";
 
 const InstagramBioGenerator = () => {
@@ -134,7 +133,7 @@ const InstagramBioGenerator = () => {
             )}
 
             <SEOHead title="Instagram Bio Generator - AI IG Bio Creator Free" description="Generate a compelling Instagram bio that attracts followers. Create professional, niche-specific Instagram bios with our free AI bio generator." keywords="instagram bio generator, ai ig bio creator, instagram bio ideas, best instagram bio, free instagram bio tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Instagram Bio Generator", "applicationCategory": "SocialMediaApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="AI Instagram Bio Generator" subtitle="First Impressions Matter on Instagram" description="Your Instagram bio is the first thing visitors see. A well-crafted bio can convert profile visitors into followers. Our AI generator creates professional, highly relatable, and perfectly formatted bios in seconds." howToUse={["Enter your name or brand name", "Select your content niche", "Pick an emoji style", "Add a custom tagline or let AI write it", "Click Generate Bio and copy it to Instagram"]} features={["Real-time AI Generation", "8 Niche Templates", "Smart Emoji Placement", "Character Counter", "Optimized Call to Action"]} faqs={[{ question: "How long should an Instagram bio be?", answer: "Instagram bios are limited to 150 characters. Keep it concise: who you are, what you do, and a call to action. Use line breaks for readability." }]} relatedTools={[{ name: "Hashtag Generator", emoji: "#️⃣", path: "/tools/hashtags" }, { name: "Social Caption Generator", emoji: "📝", path: "/tools/social-caption-generator" }]} />
         </div>
     );

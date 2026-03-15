@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const ReadTimeCalculator = () => {
     const [text, setText] = useState("");
@@ -92,7 +91,7 @@ const ReadTimeCalculator = () => {
             )}
 
             <SEOHead title="Read Time Calculator - Blog Reading Time Estimator" description="Calculate reading time for any text or blog post. Check word count, character count, and SEO content score with our free read time calculator." keywords="read time calculator, reading time estimator, blog reading time, word count tool, content length calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Read Time Calculator", "applicationCategory": "WritingApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Read Time Calculator" subtitle="Know Your Content's Reading Time" description="Reading time displayed on blog posts improves user experience and reduces bounce rates. Our calculator also provides an SEO content score based on word count." howToUse={["Paste your article content", "Adjust reading speed if needed", "View estimated read time instantly", "Check word and character count", "Review SEO content length score"]} features={["Instant Read Time", "Adjustable Reading Speed", "Word & Character Counter", "SEO Content Score", "Paragraph Counter"]} faqs={[{ question: "What is the ideal blog post length for SEO?", answer: "Research shows posts of 1500-2500 words tend to rank best. However, always prioritize quality over quantity. Make every word add value to the reader." }]} relatedTools={[{ name: "Word Counter", emoji: "📝", path: "/tools/word-counter" }, { name: "Readability Score", emoji: "📖", path: "/tools/readability" }]} />
         </div>
     );

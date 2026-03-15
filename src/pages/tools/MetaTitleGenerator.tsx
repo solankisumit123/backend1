@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const MetaTitleGenerator = () => {
     const [topic, setTopic] = useState("");
@@ -105,7 +104,7 @@ const MetaTitleGenerator = () => {
             )}
 
             <SEOHead title="Meta Title Generator - SEO Title Tag Generator Free" description="Generate SEO-optimized meta titles for any topic. Get click-worthy, 60-character page titles with our free meta title generator tool." keywords="meta title generator, seo title generator, title tag generator, page title generator, seo title ideas" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Meta Title Generator", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Meta Title Generator" subtitle="Craft Perfect SEO Title Tags" description="A great meta title increases both search rankings and click-through rates. Our generator creates multiple title variations with character count tracking to ensure you stay within Google's 60-character limit." howToUse={["Enter your topic or main keyword", "Add your brand name (optional)", "Choose a content style", "Click Generate Titles", "Copy your favorite title"]} features={["5 Content Style Templates", "Character Counter", "Brand Name Integration", "Year Auto-Insert", "Visual Length Indicator"]} faqs={[{ question: "How long should a meta title be?", answer: "Google typically displays the first 50-60 characters of a title tag. Keep titles under 60 characters to prevent truncation in search results." }, { question: "Should I include my brand in the title?", answer: "Yes, adding your brand name at the end of the title helps with brand recognition. Use the format: 'Primary Keyword | Brand Name'." }]} relatedTools={[{ name: "Meta Tags Generator", emoji: "🏷️", path: "/tools/meta-tags" }, { name: "SERP Preview", emoji: "👁️", path: "/tools/serp-preview" }]} />
         </div>
     );

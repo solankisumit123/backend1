@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Calendar, Gift, Clock, Star } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const AgeCalculator = () => {
     const [dob, setDob] = useState("");

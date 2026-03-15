@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const fontMaps: Record<string, (t: string) => string> = {
     "𝔹𝕠𝕝𝕕": (t) => t.split("").map(c => {
@@ -95,7 +94,7 @@ const InstagramFontGenerator = () => {
                 <p>Create stunning <strong>Instagram bio fonts</strong>, fancy captions, and stylish story text using our free font generator. Works with Instagram, WhatsApp, Facebook, Twitter, TikTok, and more. Just type your text, click copy, and paste anywhere!</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: instagram font generator, fancy text for instagram bio, cool fonts copy paste, stylish name generator, instagram bio maker, aesthetic fonts for social media.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

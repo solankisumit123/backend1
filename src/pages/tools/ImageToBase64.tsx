@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const ImageToBase64 = () => {
     const [base64, setBase64] = useState("");
@@ -109,7 +108,7 @@ const ImageToBase64 = () => {
                 <p>Convert any <strong>image to Base64</strong> encoded data URI string. Get ready-to-use HTML img tag and CSS background-image code. Supports PNG, JPG, GIF, SVG, and WebP formats. All processing happens in your browser — no uploads.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: image to base64, base64 image encoder, convert image to data uri, base64 converter online, image to html base64, css background base64.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const StopwatchTimer = () => {
     const [tab, setTab] = useState<"stopwatch" | "timer" | "countdown">("stopwatch");
@@ -197,8 +196,8 @@ const StopwatchTimer = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

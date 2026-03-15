@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const FuelCostCalculator = () => {
     const [distance, setDistance] = useState("");
@@ -96,7 +95,7 @@ const FuelCostCalculator = () => {
             )}
 
             <SEOHead title="Fuel Cost Calculator - Trip Fuel Expense Calculator" description="Calculate fuel cost for any trip or monthly commute. Enter distance, mileage, and fuel price to get exact travel expense in seconds." keywords="fuel cost calculator, petrol cost calculator, trip fuel calculator, travel expense calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Fuel Cost Calculator", "applicationCategory": "UtilityApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Fuel Cost Calculator" subtitle="Plan Your Travel Budget" description="Calculate exactly how much fuel you'll need and how much it will cost for any journey. Supports petrol, diesel, and CNG with real-world vehicle presets." howToUse={["Enter trip distance in km", "Set your vehicle's mileage", "Enter current fuel price", "Or use quick trip presets", "Click Calculate Fuel Cost"]} features={["Distance Input", "Mileage Presets for Cars & Bikes", "Fuel Type Presets", "Cost Per Km", "Indian City Trip Presets"]} faqs={[{ question: "How to improve car mileage?", answer: "Maintain proper tyre pressure, avoid rapid acceleration, service engine regularly, and use cruise control on highways to improve fuel efficiency." }]} relatedTools={[{ name: "EMI Calculator", emoji: "💰", path: "/tools/emi-calculator" }, { name: "Unit Converter", emoji: "🔄", path: "/tools/unit-converter" }]} />
         </div>
     );

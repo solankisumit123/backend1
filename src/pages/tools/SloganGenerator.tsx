@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const SloganGenerator = () => {
     const [brand, setBrand] = useState("");
@@ -88,7 +87,7 @@ const SloganGenerator = () => {
             )}
 
             <SEOHead title="Slogan Generator - Free Business Tagline Creator" description="Generate memorable slogans and taglines for your brand or business. Create 15 unique slogan ideas instantly with our free slogan generator." keywords="slogan generator, tagline generator, business slogan, brand tagline creator, company slogan ideas" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Slogan Generator", "applicationCategory": "BusinessApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Slogan Generator" subtitle="Create Taglines That Stick" description="A powerful slogan can define a brand for decades. Our generator creates 15 unique slogan variations by combining your brand name with proven tagline formulas." howToUse={["Enter your brand/company name", "Enter your industry or service", "Click Generate Slogans", "Browse 15 slogan options", "Copy your favorite tagline"]} features={["15 Unique Slogans", "Industry-Specific Templates", "One-Click Copy", "Quick Industry Presets", "Proven Tagline Formulas"]} faqs={[{ question: "What makes a great slogan?", answer: "Great slogans are memorable, concise, and communicate a key benefit. Famous examples: Nike's 'Just Do It', Apple's 'Think Different', McDonald's 'I'm Lovin' It'." }]} relatedTools={[{ name: "Brand Name Generator", emoji: "🏷️", path: "/tools/brand-name-generator" }, { name: "AI Headline Generator", emoji: "✏️", path: "/tools/headline-generator" }]} />
         </div>
     );

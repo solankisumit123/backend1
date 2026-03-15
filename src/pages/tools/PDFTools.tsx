@@ -9,7 +9,6 @@ import { toast } from "sonner";
 import { PDFDocument, degrees, PageSizes } from "pdf-lib";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 /* ─── Types ─── */
 type ActiveTool = "merge" | "split" | "img2pdf" | "pdf2text" | "pdf2jpg" | "rotate" | "watermark" | "page_numbers" | null;

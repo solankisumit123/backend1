@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const HRACalculator = () => {
     const [basicSalary, setBasicSalary] = useState("");
@@ -140,7 +139,7 @@ const HRACalculator = () => {
                 <p>Calculate your <strong>HRA tax exemption</strong> under Section 10(13A) of the Income Tax Act. Enter your basic salary, HRA received, rent paid, and city type to find out how much HRA is exempt from tax and how much is taxable.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: hra calculator, hra exemption calculator, house rent allowance, hra tax exemption, section 10 13a, hra calculation formula india.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

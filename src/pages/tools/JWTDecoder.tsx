@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ArrowLeft, KeySquare, Server, Link2, Download, Copy, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
-import AdBanner from "../../components/AdBanner";
 
 const JWTDecoder = () => {
     const [token, setToken] = useState("");
@@ -103,8 +102,8 @@ const JWTDecoder = () => {
             <p className="text-center text-xs text-muted-foreground font-bold mt-8">Note: Decodes headers and payloads. Signature verification is not performed.</p>
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="3225557692" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

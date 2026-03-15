@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, ArrowRightLeft } from "lucide-react";
-import AdBanner from "../../components/AdBanner";
 
 const URLEncoderDecoder = () => {
     const [input, setInput] = useState("");
@@ -76,8 +75,8 @@ const URLEncoderDecoder = () => {
             )}
 
       {/* ── AD BANNERS ── */}
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="auto" />
-      <AdBanner dataAdSlot="9274146632" dataAdFormat="rectangle" />
+      
+      
 
         </div>
     );

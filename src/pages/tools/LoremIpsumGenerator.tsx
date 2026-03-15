@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowLeft, Copy, CheckCircle, RefreshCw } from "lucide-react";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const WORDS = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua", "enim", "ad", "minim", "veniam", "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi", "aliquip", "ex", "ea", "commodo", "consequat", "duis", "aute", "irure", "in", "reprehenderit", "voluptate", "velit", "esse", "cillum", "fugiat", "nulla", "pariatur", "excepteur", "sint", "occaecat", "cupidatat", "non", "proident", "sunt", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est", "laborum", "porta", "nibh", "venenatis", "cras", "blandit", "turpis", "cursus", "viverra", "maecenas", "accumsan", "lacus", "vel", "facilisis", "volutpat", "lectus", "vestibulum", "mattis", "ullamcorper", "pellentesque", "habitant", "morbi", "tristique", "senectus", "netus", "malesuada", "fames", "ac", "egestas", "integer", "feugiat", "scelerisque", "varius", "nunc", "purus", "semper", "eget", "duis", "tellus"];
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import AdBanner from "../../components/AdBanner";
 
 const TwitterCharCounter = () => {
     const [text, setText] = useState("");
@@ -90,7 +89,7 @@ const TwitterCharCounter = () => {
                 <p>Count characters for your <strong>tweets on X (Twitter)</strong> with URL-aware counting. Our tool shows real-time character count, word count, hashtag count, and X Premium limits. Perfect for social media managers and content creators.</p>
                 <p className="mt-4 text-sm text-muted-foreground">Keywords: twitter character counter, x character limit, tweet length checker, 280 character counter, twitter word count, x post counter.</p>
             </div>
-            <div className="mt-6"><AdBanner dataAdSlot="9274146632" dataAdFormat="auto" /></div>
+            <div className="mt-6"></div>
         </div>
     );
 };

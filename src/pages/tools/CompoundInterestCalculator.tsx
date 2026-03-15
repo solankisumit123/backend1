@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
-import AdBanner from "../../components/AdBanner";
 
 const CompoundInterestCalculator = () => {
     const [principal, setPrincipal] = useState("");
@@ -105,7 +104,7 @@ const CompoundInterestCalculator = () => {
             )}
 
             <SEOHead title="Compound Interest Calculator - Online Investment Calculator" description="Calculate compound interest with daily, monthly, quarterly, or annual compounding. See year-by-year growth of your investment with our free calculator." keywords="compound interest calculator, investment calculator, compound interest formula, interest calculator online, wealth calculator" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Compound Interest Calculator", "applicationCategory": "FinanceApplication" }} />
-            <div className="my-8"><AdBanner /></div>
+            <div className="my-8"></div>
             <SEOSection title="Compound Interest Calculator" subtitle="Watch Your Money Grow with Compound Interest" description="Compound interest is called the 8th wonder of the world. Our calculator shows exactly how your money grows over time with different compounding frequencies." howToUse={["Enter your principal amount", "Set the annual interest rate", "Choose the investment period", "Select compounding frequency", "Click Calculate to see growth"]} features={["Daily/Monthly/Quarterly/Annual Compounding", "Year-by-Year Breakdown", "Total Interest Earned", "10-Year Schedule", "Multiple Frequencies"]} faqs={[{ question: "What is compound interest?", answer: "Compound interest is interest calculated on both the initial principal and the accumulated interest. The more frequently interest compounds, the greater the total return." }]} relatedTools={[{ name: "EMI Calculator", emoji: "💰", path: "/tools/emi-calculator" }, { name: "SIP Calculator", emoji: "📊", path: "/tools/sip-calculator" }]} />
         </div>
     );
