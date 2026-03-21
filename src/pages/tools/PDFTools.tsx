@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import AdSense from "@/components/AdSense";
 import {
     ArrowLeft, FileText, Merge, Scissors, Image as ImageIcon, Type,
     Download, Upload, Loader2, CheckCircle, Trash2, Plus,
@@ -9,6 +10,7 @@ import { toast } from "sonner";
 import { PDFDocument, degrees, PageSizes } from "pdf-lib";
 import SEOHead from "@/components/SEO/SEOHead";
 import SEOSection from "@/components/SEO/SEOSection";
+import ToolIcon from "@/components/ToolIcon";
 
 /* ─── Types ─── */
 type ActiveTool = "merge" | "split" | "img2pdf" | "pdf2text" | "pdf2jpg" | "rotate" | "watermark" | "page_numbers" | null;
@@ -739,14 +741,14 @@ function StampPDF({ mode }: { mode: "numbers" | "watermark" }) {
    MAIN PAGE
 ════════════════════════════ */
 const tools = [
-    { id: "merge" as ActiveTool, icon: Merge, emoji: "🔗", label: "Merge PDFs", desc: "Combine multiple PDFs into one", color: "text-comic-blue" },
-    { id: "split" as ActiveTool, icon: Scissors, emoji: "✂️", label: "Split PDF", desc: "Split one PDF into two files", color: "text-comic-red" },
-    { id: "img2pdf" as ActiveTool, icon: ImageIcon, emoji: "🖼️", label: "Images → PDF", desc: "Convert JPG/PNG to PDF", color: "text-comic-green" },
-    { id: "pdf2text" as ActiveTool, icon: Type, emoji: "📝", label: "PDF → Text", desc: "Extract text from PDF", color: "text-comic-purple" },
-    { id: "pdf2jpg" as ActiveTool, icon: ImageIcon, emoji: "🎨", label: "PDF → JPG", desc: "Convert PDF pages to JPG images", color: "text-comic-yellow" },
-    { id: "rotate" as ActiveTool, icon: RotateCw, emoji: "🔄", label: "Rotate PDF", desc: "Rotate pages clockwise", color: "text-comic-pink" },
-    { id: "watermark" as ActiveTool, icon: Type, emoji: "🏷️", label: "Watermark", desc: "Add text watermark to pages", color: "text-comic-red" },
-    { id: "page_numbers" as ActiveTool, icon: FileText, emoji: "🔢", label: "Page Numbers", desc: "Add numbers to all pages", color: "text-comic-purple" },
+    { id: "merge" as ActiveTool, icon: Merge, emoji: "🔗", label: "Merge PDFs", desc: "Combine multiple PDFs into one", color: "bg-comic-blue" },
+    { id: "split" as ActiveTool, icon: Scissors, emoji: "✂️", label: "Split PDF", desc: "Split one PDF into two files", color: "bg-comic-red" },
+    { id: "img2pdf" as ActiveTool, icon: ImageIcon, emoji: "🖼️", label: "Images → PDF", desc: "Convert JPG/PNG to PDF", color: "bg-comic-green" },
+    { id: "pdf2text" as ActiveTool, icon: Type, emoji: "📝", label: "PDF → Text", desc: "Extract text from PDF", color: "bg-comic-purple" },
+    { id: "pdf2jpg" as ActiveTool, icon: ImageIcon, emoji: "🎨", label: "PDF → JPG", desc: "Convert PDF pages to JPG images", color: "bg-comic-yellow" },
+    { id: "rotate" as ActiveTool, icon: RotateCw, emoji: "🔄", label: "Rotate PDF", desc: "Rotate pages clockwise", color: "bg-comic-orange" },
+    { id: "watermark" as ActiveTool, icon: Type, emoji: "🏷️", label: "Watermark", desc: "Add text watermark to pages", color: "bg-comic-red" },
+    { id: "page_numbers" as ActiveTool, icon: FileText, emoji: "🔢", label: "Page Numbers", desc: "Add numbers to all pages", color: "bg-comic-purple" },
 ];
 
 /* ════════════════════════════
@@ -864,23 +866,23 @@ const PDFTools = () => {
                     <button
                         key={t.id}
                         onClick={() => setActive(t.id)}
-                        className={`comic-card flex flex-col items-center text-center p-4 hover:scale-105 transition-transform cursor-pointer ${active === t.id ? "border-primary bg-primary/5" : ""}`}
+                        className={`comic-card flex flex-col items-center text-center p-4 hover:scale-105 transition-transform cursor-pointer group ${active === t.id ? "border-primary bg-primary/5" : ""}`}
                     >
-                        <span className="text-3xl mb-1">{t.emoji}</span>
+                        <ToolIcon icon={t.icon} color={t.color} size="sm" className="mb-3 transform group-hover:scale-110 transition-transform" />
                         <span className={`font-black text-sm ${active === t.id ? "text-primary" : "text-foreground"}`}>{t.label}</span>
-                        <span className="text-xs text-muted-foreground mt-1 hidden sm:block">{t.desc}</span>
+                        <span className="text-[10px] text-muted-foreground mt-1 hidden sm:block opacity-70">{t.desc}</span>
                     </button>
                 ))}
             </div>
 
             {/* Active Tool Panel */}
             {active && (
-                <div className="comic-card animate-slide-up">
-                    <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-border">
-                        <span className="text-2xl">{activeTool?.emoji}</span>
+                <div className="comic-card animate-slide-up border-2 border-primary/20 shadow-xl">
+                    <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-border">
+                        <ToolIcon icon={activeTool!.icon} color={activeTool!.color} size="sm" />
                         <div>
                             <h2 className="comic-heading text-xl text-foreground">{activeTool?.label}</h2>
-                            <p className="text-sm text-muted-foreground font-bold">{activeTool?.desc}</p>
+                            <p className="text-sm text-muted-foreground font-bold opacity-60">{activeTool?.desc}</p>
                         </div>
                     </div>
 
@@ -905,6 +907,9 @@ const PDFTools = () => {
             <div className="mt-8 text-center text-xs text-muted-foreground font-bold border-2 border-dashed border-border rounded-xl py-3 px-4">
                 🔒 100% Private — All PDF processing happens in your browser. Files are never uploaded to any server.
             </div>
+
+            <AdSense adSlot="auto" />
+
             {/* ── SEO SECTION ── */}
             <SEOHead
                 title="Merge & Split PDF Online Free"

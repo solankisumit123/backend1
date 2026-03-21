@@ -1,3 +1,6 @@
+import { blogsExtra } from "./blogs-extra";
+import { blogsExtra2 } from "./blogs-extra2";
+
 export interface BlogPostData {
     slug: string;
     title: string;
@@ -8,7 +11,7 @@ export interface BlogPostData {
     author: string;
 }
 
-export const blogs: BlogPostData[] = [
+const blogsCore: BlogPostData[] = [
     {
         slug: "how-to-do-seo-audit-free",
         title: "How to Perform a Complete SEO Audit for Free in 2026",
@@ -142,3 +145,5 @@ export const blogs: BlogPostData[] = [
     `
     }
 ];
+
+export const blogs: BlogPostData[] = [...blogsCore, ...blogsExtra, ...blogsExtra2];

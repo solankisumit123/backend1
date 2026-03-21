@@ -77,13 +77,7 @@ export const massiveToolsList = [
             { title: "Data Analysis Tools", desc: "Best data analysis tools guide", icon: BarChart, to: "/tools/data-analysis-tools", color: "bg-comic-red text-white" }
         ]
     },
-    {
-        title: "5️⃣ Downloader Tools ⚡",
-        tools: [
-            { title: "YouTube Video Downloader", desc: "Download YouTube Videos in 4K/MP3", icon: Download, to: "/tools/youtube-video-downloader", color: "bg-comic-red text-white" },
-            { title: "Instagram Video Downloader", desc: "Download Instagram Videos & Reels", icon: Download, to: "/tools/instagram-video-downloader", color: "bg-comic-green text-white" },
-        ]
-    },
+
     {
         title: "6️⃣ Developer Tools",
         tools: [

@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { blogs } from "@/data/blogs";
 import { ArrowLeft, ExternalLink, Calendar, User } from "lucide-react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -20,6 +21,17 @@ const BlogPost = () => {
 
     return (
         <div className="container mx-auto px-4 py-12 animate-slide-up max-w-4xl">
+            <Helmet>
+                <title>{post.title} | WebInsight Pro</title>
+                <meta name="description" content={post.excerpt} />
+                <link rel="canonical" href={`https://webinsightpro.site/blog/${post.slug}`} />
+                <meta property="og:title" content={`${post.title} | WebInsight Pro`} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:url" content={`https://webinsightpro.site/blog/${post.slug}`} />
+                <meta name="twitter:title" content={`${post.title} | WebInsight Pro`} />
+                <meta name="twitter:description" content={post.excerpt} />
+            </Helmet>
+
             <Link
                 to="/blog"
                 className="inline-flex items-center gap-2 mb-8 text-muted-foreground font-bold hover:text-foreground transition-colors"

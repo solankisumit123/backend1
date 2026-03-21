@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Zap, Link2, Key, BarChart3, Lock, FileEdit, Map, LineChart, Cloud, Shield, Youtube } from 'lucide-react';
+import { Search, Zap, Link2, Key, BarChart3, Lock, FileEdit, Map, LineChart, Cloud, Shield, Globe } from 'lucide-react';
 
 const FloatingBubble = ({ icon: Icon, top, left, delay, size = "md" }: { icon: React.ElementType, top: string, left: string, delay: string, size?: "sm" | "md" | "lg" }) => {
   const sizeClasses = {
@@ -9,9 +9,9 @@ const FloatingBubble = ({ icon: Icon, top, left, delay, size = "md" }: { icon: R
   };
 
   return (
-    <div 
+    <div
       className={`absolute ${sizeClasses[size]} bg-white/20 backdrop-blur-2xl border border-white/50 rounded-full shadow-[0_8px_32px_rgba(255,255,255,0.15)] flex items-center justify-center animate-float-complex z-0 opacity-50 hover:opacity-100 hover:scale-110 hover:border-white/70 transition-all duration-1000`}
-      style={{ top, left, animationDelay: delay }}
+      style={{ top, left, animationDelay: delay, willChange: 'transform' }}
     >
       <Icon className="w-full h-full text-primary/70 drop-shadow-md" strokeWidth={1} />
     </div>
@@ -26,7 +26,7 @@ const BackgroundDecorations = () => {
       <div className="bg-floating-orb top-[40%] right-[-10%] animate-float-complex opacity-40 bg-[#f59e0b]"></div>
       <div className="bg-floating-orb bottom-[-10%] left-[10%] animate-float opacity-50 bg-[#ec4899]"></div>
       <div className="bg-floating-orb top-[70%] right-[15%] animate-float-fast opacity-40 bg-[#8b5cf6]"></div>
-      
+
       {/* Premium Floating Bubbles (Animated Icons) */}
       <FloatingBubble icon={Search} top="15%" left="8%" delay="0s" size="lg" />
       <FloatingBubble icon={Zap} top="65%" left="5%" delay="2s" size="md" />
@@ -35,7 +35,7 @@ const BackgroundDecorations = () => {
       <FloatingBubble icon={Shield} top="80%" left="80%" delay="4s" size="md" />
       <FloatingBubble icon={Map} top="30%" left="15%" delay="5s" size="sm" />
       <FloatingBubble icon={Cloud} top="12%" left="45%" delay="2s" size="sm" />
-      <FloatingBubble icon={Youtube} top="75%" left="40%" delay="6s" size="md" />
+      <FloatingBubble icon={Globe} top="75%" left="40%" delay="6s" size="md" />
       <FloatingBubble icon={Lock} top="55%" left="18%" delay="1.5s" size="sm" />
       <FloatingBubble icon={FileEdit} top="25%" left="75%" delay="3.5s" size="sm" />
 

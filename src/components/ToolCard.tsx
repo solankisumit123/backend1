@@ -10,30 +10,33 @@ interface ToolCardProps {
   delay?: number;
 }
 
+import ToolIcon from "./ToolIcon";
 import { ArrowRight } from "lucide-react";
 
-const ToolCard = ({ title, desc, icon: Icon, to, delay = 0 }: ToolCardProps) => {
+const ToolCard = ({ title, desc, icon: Icon, to, color, delay = 0 }: ToolCardProps) => {
   return (
     <Link 
       to={to} 
-      className="liquid-card p-6 flex flex-col items-center group relative rounded-[2.5rem] animate-slide-up h-full" 
+      className="liquid-card p-4 sm:p-6 flex flex-col items-center group relative rounded-[2.5rem] animate-slide-up h-full border-2 border-slate-100/50 hover:border-primary/30 transition-all duration-500" 
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="icon-box-smooth w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5 border border-white/20 relative z-10">
-        <Icon className="w-8 h-8" strokeWidth={2} />
-        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      {/* Comic-style Icon Box */}
+      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+        <ToolIcon icon={Icon} color={color} />
+        {/* Glow Effect */}
+        <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
       </div>
       
-      <h3 className="font-black text-lg text-secondary mb-2 text-center group-hover:smooth-gradient-text transition-all duration-500">
+      <h3 className="font-black text-lg text-secondary mb-2 text-center group-hover:smooth-gradient-text transition-all duration-500 px-2">
         {title}
       </h3>
       
-      <p className="text-xs font-semibold text-secondary/60 text-center mb-4 leading-relaxed line-clamp-2">
+      <p className="text-xs font-bold text-secondary/50 text-center mb-4 leading-relaxed line-clamp-2 px-1">
         {desc}
       </p>
 
       <div className="mt-auto flex items-center gap-2 text-xs font-black text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-700">
-        Try Now <ArrowRight className="w-4 h-4" />
+        Launch Tool <ArrowRight className="w-4 h-4" />
       </div>
     </Link>
   );

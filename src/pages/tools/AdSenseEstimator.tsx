@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import AdSense from "@/components/AdSense";
 
 const AdSenseEstimator = () => {
     const [pageViews, setPageViews] = useState(100000);
@@ -67,7 +68,7 @@ const AdSenseEstimator = () => {
                 ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                     { label: "Effective CPM", value: `$${effectiveCPM.toFixed(2)}` },
                     { label: "Page RPM", value: `$${rpm.toFixed(2)}` },
@@ -77,11 +78,16 @@ const AdSenseEstimator = () => {
                         <p className="text-xs text-muted-foreground font-bold uppercase">{r.label}</p>
                     </div>
                 ))}
-</div>
+            </div>
 
-      {/* ── AD BANNERS ── */}
-      
-      
+            {/* ── AD BANNERS ── */}
+            <div className="mt-12 space-y-8">
+                <AdSense adSlot="auto" />
+                <div className="bg-card/50 p-6 rounded-2xl border-2 border-dashed border-border text-center">
+                    <p className="text-xs text-muted-foreground font-bold uppercase mb-4">Advertisement</p>
+                    <AdSense adSlot="auto" adFormat="horizontal" />
+                </div>
+            </div>
 
         </div>
     );

@@ -1,10 +1,9 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, Menu, X, LogOut, FileText } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/lib/AuthContext";
 
 const Navbar = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -32,13 +31,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full sticky top-0 z-50 py-4 px-6 md:px-10 flex items-center justify-between bg-white/10 backdrop-blur-xl border-b border-white/20">
+    <nav className="w-full sticky top-0 z-[999] py-4 px-6 md:px-10 flex items-center justify-between bg-white/10 backdrop-blur-xl border-b border-white/20">
       {/* Logo Area */}
       <Link to="/" className="flex items-center gap-3 group">
         <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-lg transform group-hover:rotate-12 transition-transform duration-500 border-2 border-primary/20">
-          <img src="/logo.png" alt="WebInsight Pro Logo" className="w-full h-full object-cover" />
+          <img src="/logo.png" alt="WebInsight Pro Logo" width="48" height="48" className="w-full h-full object-cover" />
         </div>
-        <span className="font-black text-xl md:text-2xl text-secondary tracking-tight">
+        <span className="font-black text-lg sm:text-xl md:text-2xl text-secondary tracking-tight">
           WEBINSIGHT <span className="text-primary uppercase">PRO</span>
         </span>
       </Link>

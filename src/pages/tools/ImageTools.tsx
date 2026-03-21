@@ -6,6 +6,7 @@ import {
     FileImage
 } from "lucide-react";
 import { toast } from "sonner";
+import ToolIcon from "@/components/ToolIcon";
 
 /* ─── Types ─── */
 type ActiveTool = "compress" | "resize" | "convert" | "crop" | "rotate" | null;
@@ -450,11 +451,11 @@ function ImageRotator() {
    MAIN PAGE
 ════════════════════════════ */
 const tools = [
-    { id: "compress" as ActiveTool, icon: Minimize, emoji: "📉", label: "Compress Image", desc: "Reduce image file size" },
-    { id: "resize" as ActiveTool, icon: Maximize, emoji: "📏", label: "Resize Image", desc: "Change dimensions (px)" },
-    { id: "convert" as ActiveTool, icon: ImageIcon, emoji: "🔄", label: "Convert Format", desc: "JPG, PNG, WebP converter" },
-    { id: "crop" as ActiveTool, icon: Scissors, emoji: "✂️", label: "Crop Image", desc: "Crop specific area of image" },
-    { id: "rotate" as ActiveTool, icon: RotateCw, emoji: "🔃", label: "Rotate Image", desc: "Rotate 90, 180, 270 degrees" },
+    { id: "compress" as ActiveTool, icon: Minimize, emoji: "📉", label: "Compress Image", desc: "Reduce image file size", color: "bg-comic-red" },
+    { id: "resize" as ActiveTool, icon: Maximize, emoji: "📏", label: "Resize Image", desc: "Change dimensions (px)", color: "bg-comic-blue" },
+    { id: "convert" as ActiveTool, icon: ImageIcon, emoji: "🔄", label: "Convert Format", desc: "JPG, PNG, WebP converter", color: "bg-comic-green" },
+    { id: "crop" as ActiveTool, icon: Scissors, emoji: "✂️", label: "Crop Image", desc: "Crop specific area of image", color: "bg-comic-orange" },
+    { id: "rotate" as ActiveTool, icon: RotateCw, emoji: "🔃", label: "Rotate Image", desc: "Rotate 90, 180, 270 degrees", color: "bg-comic-purple" },
 ];
 
 const ImageTools = () => {
@@ -477,22 +478,22 @@ const ImageTools = () => {
                     <button
                         key={t.id}
                         onClick={() => setActive(t.id)}
-                        className={`comic-card flex flex-col items-center text-center p-4 hover:scale-105 transition-transform cursor-pointer ${active === t.id ? "border-primary bg-primary/5" : ""}`}
+                        className={`comic-card flex flex-col items-center text-center p-4 hover:scale-105 transition-transform cursor-pointer group ${active === t.id ? "border-primary bg-primary/5" : ""}`}
                     >
-                        <span className="text-3xl mb-1">{t.emoji}</span>
+                        <ToolIcon icon={t.icon} color={t.color} size="sm" className="mb-3 transform group-hover:scale-110 transition-transform" />
                         <span className={`font-black text-sm ${active === t.id ? "text-primary" : "text-foreground"}`}>{t.label}</span>
-                        <span className="text-xs text-muted-foreground mt-1 hidden sm:block">{t.desc}</span>
+                        <span className="text-[10px] text-muted-foreground mt-1 hidden sm:block opacity-70">{t.desc}</span>
                     </button>
                 ))}
             </div>
 
             {active && (
-                <div className="comic-card animate-slide-up">
-                    <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-border">
-                        <span className="text-2xl">{activeTool?.emoji}</span>
+                <div className="comic-card animate-slide-up border-2 border-primary/20 shadow-xl">
+                    <div className="flex items-center gap-4 mb-6 pb-4 border-b-2 border-border">
+                        <ToolIcon icon={activeTool!.icon} color={activeTool!.color} size="sm" />
                         <div>
                             <h2 className="comic-heading text-xl text-foreground">{activeTool?.label}</h2>
-                            <p className="text-sm text-muted-foreground font-bold">{activeTool?.desc}</p>
+                            <p className="text-sm text-muted-foreground font-bold opacity-60">{activeTool?.desc}</p>
                         </div>
                     </div>
 

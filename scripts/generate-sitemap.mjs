@@ -59,6 +59,21 @@ const routes = [
   "/tools/related-keywords", "/tools/search-volume-checker", "/tools/trending-keywords",
 ];
 
+// Add the 20 blog posts dynamically
+const blogs = [
+    "how-to-do-seo-audit-free", "estimate-website-traffic-like-a-pro", "youtube-channel-revenue-calculator",
+    "website-ad-revenue-estimator", "importance-of-page-speed-seo", "find-keyword-difficulty-in-seconds",
+    "how-to-build-backlinks-2026", "on-page-seo-checklist-2026", "google-core-web-vitals-guide-2026",
+    "keyword-research-free-tools", "technical-seo-guide-fix-errors", "write-seo-optimized-blog-posts",
+    "google-search-console-beginners-guide", "local-seo-guide-google-maps-2026", "youtube-seo-rank-videos-2026",
+    "what-is-domain-authority-how-to-improve", "how-to-monetize-website-with-adsense", "email-marketing-guide-bloggers-2026",
+    "affiliate-marketing-beginners-guide-2026", "website-speed-optimization-complete-guide"
+];
+
+for (const slug of blogs) {
+    routes.push({ path: `/blog/${slug}`, priority: 0.75, changefreq: "monthly" });
+}
+
 const today = new Date().toISOString().split("T")[0];
 const urlEntries = routes
   .filter((r) => typeof r === "string" || r.path)

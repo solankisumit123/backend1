@@ -48,21 +48,21 @@ const Sidebar = () => {
       </aside>
 
       {/* Mobile Floating Dock */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:hidden z-[100] w-[90%] max-w-[400px]">
-        <div className="premium-sidebar-glass flex items-center justify-around p-3 px-6 rounded-[2.5rem] border border-white/40 backdrop-blur-3xl bg-white/60 shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+      <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 md:hidden z-[100] w-[92%] max-w-[420px]">
+        <div className="flex items-center justify-around p-2.5 px-4 rounded-[2.5rem] border-2 border-slate-100/50 backdrop-blur-3xl bg-white/70 shadow-[0_20px_50px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <Link
                 key={item.id}
                 to={item.path}
-                className={`p-3 rounded-full transition-all duration-300 ${
+                className={`p-3 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1 ${
                   isActive
-                    ? "bg-primary text-white shadow-lg scale-110"
-                    : "text-secondary/60 active:scale-95"
+                    ? "bg-primary text-white shadow-lg scale-110 -translate-y-1"
+                    : "text-secondary/40 active:scale-95 hover:text-primary hover:bg-primary/5"
                 }`}
               >
-                <item.icon className="w-6 h-6" strokeWidth={isActive ? 2.5 : 2} />
+                <item.icon className="w-5 h-5 sm:w-6 h-6" strokeWidth={isActive ? 3 : 2} />
               </Link>
             );
           })}

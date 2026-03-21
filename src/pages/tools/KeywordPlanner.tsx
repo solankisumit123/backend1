@@ -51,7 +51,7 @@ const KeywordPlanner = () => {
             </div>
 
             <div className="bg-card border-4 border-border rounded-2xl p-6 shadow-lg mb-6">
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <input
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
@@ -60,7 +60,7 @@ const KeywordPlanner = () => {
                         className="flex-1 border-2 border-border rounded-xl px-4 py-3 bg-background text-foreground font-bold focus:outline-none focus:border-comic-blue transition-colors"
                     />
                     <button onClick={analyze} disabled={loading}
-                        className="bg-comic-blue hover:bg-comic-blue/90 text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2">
+                        className="bg-comic-blue hover:bg-comic-blue/90 text-white font-bold px-8 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 justify-center">
                         <Search className="w-4 h-4" /> {loading ? "Analyzing..." : "Analyze"}
                     </button>
                 </div>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Calculator } from "lucide-react";
+import ToolIcon from "@/components/ToolIcon";
 
 const SimpleInterestCalculator = () => {
     const [mode, setMode] = useState<"si" | "ci">("si");
@@ -29,7 +31,7 @@ const SimpleInterestCalculator = () => {
                 <ArrowLeft className="w-4 h-4" /> Back to Tools
             </Link>
             <div className="text-center mb-8">
-                <div className="text-5xl mb-3">🧮</div>
+                <ToolIcon icon={Calculator} color="bg-comic-blue" size="lg" className="mx-auto mb-4" />
                 <h1 className="comic-heading text-4xl text-foreground mb-2">Interest Calculator</h1>
                 <p className="text-muted-foreground font-bold">Calculate Simple Interest (SI) and Compound Interest (CI)</p>
             </div>

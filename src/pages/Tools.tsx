@@ -104,7 +104,7 @@ const categories = [
       { title: "Word Combiner", desc: "Merge words for PPC", icon: ArrowRightLeft, to: "/tools/word-combiner", color: "bg-comic-purple text-primary-foreground" },
       { title: "YouTube Keywords", desc: "Find best YouTube video keywords", icon: Youtube, to: "/tools/youtube-keyword", color: "bg-comic-red text-primary-foreground" },
       { title: "Amazon Keywords", desc: "Product keywords for sellers", icon: Hash, to: "/tools/amazon-keyword", color: "bg-comic-orange text-primary-foreground" },
-      { title: "Google Suggest", desc: "Scrape Google autocomplete", icon: Search, to: "/tools/google-suggest", color: "bg-comic-blue text-accent-foreground" },
+      { title: "Keyword Suggestion", desc: "Get search autocomplete ideas", icon: Search, to: "/tools/google-suggest", color: "bg-comic-blue text-accent-foreground" },
       { title: "Meta Title Generator", desc: "SEO titles that rank & get clicks", icon: Tag, to: "/tools/meta-title-generator", color: "bg-comic-green text-secondary-foreground" },
       { title: "Meta Description", desc: "Click-worthy page descriptions", icon: FileText, to: "/tools/meta-description-generator", color: "bg-comic-purple text-primary-foreground" },
       { title: "CTR Calculator", desc: "Click-through rate calculator", icon: BarChart3, to: "/tools/ctr-calculator", color: "bg-comic-orange text-primary-foreground" },
@@ -186,7 +186,7 @@ const categories = [
     title: "✍️ Text & Writing Tools",
     tools: [
       { title: "Grammar Checker", desc: "Check grammar & spelling", icon: FileText, to: "/tools/grammar-checker", color: "bg-comic-blue text-accent-foreground" },
-      { title: "Article Rewriter", desc: "Paraphrase & rewrite text", icon: PenTool, to: "/tools/article-rewriter", color: "bg-comic-purple text-primary-foreground" },
+      { title: "Paraphrasing Tool", desc: "Rewrite & improve text clarity", icon: PenTool, to: "/tools/article-rewriter", color: "bg-comic-purple text-primary-foreground" },
       { title: "Readability Score", desc: "Flesch reading ease test", icon: Eye, to: "/tools/readability", color: "bg-comic-orange text-primary-foreground" },
       { title: "Markdown → HTML", desc: "Convert MD to HTML", icon: Code, to: "/tools/markdown-to-html", color: "bg-comic-green text-secondary-foreground" },
     ],
@@ -260,27 +260,27 @@ const Tools = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 relative z-10">
-      <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-        <h1 className="text-4xl md:text-6xl font-black text-secondary mb-6 leading-tight">
+      <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-16 animate-fade-in">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-secondary mb-4 sm:mb-6 leading-tight">
           WebInsight <span className="text-primary italic">Pro</span>
         </h1>
-        <p className="text-xl text-secondary/60 font-bold max-w-2xl mx-auto">
+        <p className="text-base sm:text-xl text-secondary/60 font-bold max-w-2xl mx-auto px-4">
           Explore {total}+ premium utilities across all categories. From SEO and marketing 
           to productivity and finance—we've got everything you need.
         </p>
       </div>
 
       {/* ═══ Search Bar ═══ */}
-      <div className="max-w-2xl mx-auto mb-20 animate-slide-up" style={{ animationDelay: '200ms' }}>
+      <div className="max-w-2xl mx-auto mb-16 sm:mb-20 animate-slide-up px-2 sm:px-0" style={{ animationDelay: '200ms' }}>
         <div className="relative group">
           <div className="absolute inset-0 bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-          <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-primary pointer-events-none z-10" />
+          <Search className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 h-6 text-primary pointer-events-none z-10" />
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search for tools (e.g. SEO Audit, GST, Password)..."
-            className="w-full bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[2rem] pl-16 pr-14 py-5 text-secondary font-bold text-lg outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary/50 transition-all shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] placeholder:text-secondary/40 relative z-0"
+            placeholder="Search for tools..."
+            className="w-full bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[1.5rem] sm:rounded-[2rem] pl-12 sm:pl-16 pr-12 sm:pr-14 py-4 sm:py-5 text-secondary font-bold text-base sm:text-lg outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary/50 transition-all shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] placeholder:text-secondary/40 relative z-0"
           />
           {searchQuery && (
             <button
@@ -376,7 +376,7 @@ const Tools = () => {
           </div>
         </div>
 
-        <p className="mt-8 text-sm font-bold text-muted-foreground border-t-2 pt-4">Related searches: free seo tools online, online seo checker, website traffic checker, seo analyzer free, seo score checker, backlinks checker free, keyword research tool free, website performance checker, page speed test tool, seo audit tools, rank tracker free, organic traffic estimator, free digital marketing tools, online optimization tools, how to check website seo free, free tools to improve website ranking, best seo audit tools 2026, how to increase organic traffic step by step, free keyword research and analysis tool, on-page seo checklist for beginners, how to get free backlinks for website, website seo performance report free, seo tips for small business websites, what is seo tools and why use them, free seo strategies for startups, step by step seo guide for beginners, seo trends in 2026, best free digital marketing tools list, how to optimize website for search engines, how to improve page speed for seo, seo metrics you must track in 2026, gst calculator, income tax calculator india, emi calculator, bmi calculator, calorie calculator, fancy text generator, qr code generator, json formatter online, currency converter, typing speed test wpm.</p>
+
       </div>
     </div>
   );

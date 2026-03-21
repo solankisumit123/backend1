@@ -12,13 +12,13 @@ const suggestions: Record<string, string[]> = {
     "website": ["website builder", "website speed test", "website seo checker", "website traffic", "website design", "website analysis"],
 };
 
-const GoogleSuggestScraper = () => {
+const KeywordSuggestionTool = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const scrape = () => {
+    const getSuggestions = () => {
         if (!query.trim()) return;
         setLoading(true);
         setTimeout(() => {
@@ -44,20 +44,30 @@ const GoogleSuggestScraper = () => {
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-2xl">
+            <SEOHead 
+                title="Keyword Suggestion Tool - Discover Autocomplete Keywords" 
+                description="Find high-volume keyword suggestions based on popular search patterns. Expand your SEO strategy with our free keyword suggestion tool." 
+                keywords="keyword suggestion tool, autocomplete keywords, seo keyword research, search suggestions" 
+                schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Keyword Suggestion Tool", "applicationCategory": "SEOApplication" }} 
+            />
+            
             <Link to="/tools" className="comic-btn text-xs bg-background text-foreground flex items-center gap-2 w-fit mb-6">
                 <ArrowLeft className="w-4 h-4" /> Back to Tools
             </Link>
+            
             <div className="text-center mb-8">
                 <div className="text-5xl mb-3">🔍</div>
-                <h1 className="comic-heading text-4xl text-foreground mb-2">Google Suggest Scraper</h1>
-                <p className="text-muted-foreground font-bold">Extract Google autocomplete suggestions for any keyword</p>
+                <h1 className="comic-heading text-4xl text-foreground mb-2">Keyword Suggestion Tool</h1>
+                <p className="text-muted-foreground font-bold">Discover popular search suggestions for any keyword</p>
             </div>
 
             <div className="bg-card border-4 border-border rounded-2xl p-6 shadow-lg mb-6">
-                <div className="flex gap-3">
-                    <input value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && scrape()}
+                <div className="flex flex-col sm:flex-row gap-3">
+                    <input value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && getSuggestions()}
                         placeholder="Enter keyword..." className="flex-1 border-2 border-border rounded-xl px-4 py-3 bg-background text-foreground font-bold focus:outline-none focus:border-comic-blue" />
-                    <button onClick={scrape} disabled={loading} className="bg-comic-blue hover:bg-comic-blue/90 text-white font-bold px-6 py-3 rounded-xl">{loading ? "Scraping..." : "Get Suggestions"}</button>
+                    <button onClick={getSuggestions} disabled={loading} className="bg-comic-blue hover:bg-comic-blue/90 text-white font-bold px-8 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center">
+                        {loading ? "Generating..." : "Get Suggestions"}
+                    </button>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-3">
                     {Object.keys(suggestions).map(k => (
@@ -69,7 +79,7 @@ const GoogleSuggestScraper = () => {
             {results.length > 0 && (
                 <div className="bg-card border-4 border-border rounded-2xl overflow-hidden">
                     <div className="p-4 border-b-2 border-border flex justify-between items-center">
-                        <h3 className="font-black text-foreground">🔍 Google Suggestions for "{query}"</h3>
+                        <h3 className="font-black text-foreground">🔍 Suggestions for "{query}"</h3>
                         <button onClick={copyAll} className={`px-4 py-2 rounded-xl text-sm font-bold ${copied ? "bg-comic-green text-white" : "bg-muted hover:bg-comic-blue hover:text-white"}`}>
                             {copied ? "✅ Copied!" : "📋 Copy All"}
                         </button>
@@ -86,10 +96,19 @@ const GoogleSuggestScraper = () => {
                 </div>
             )}
 
-            <SEOHead title="Google Suggest Scraper - Autocomplete Keywords Tool" description="Extract Google autocomplete suggestions for any keyword. Find what people are actually searching on Google with our free suggestion scraper." keywords="google suggest scraper, google autocomplete, google suggestions, autocomplete keywords tool" schemaData={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Google Suggest Scraper", "applicationCategory": "SEOApplication" }} />
-            <div className="my-8"></div>
-            <SEOSection title="Google Suggest Scraper" subtitle="Mine Real Google Autocomplete Data" description="Google's autocomplete suggestions reveal what real users are searching for. Our scraper extracts these suggestions to help you find keyword ideas that have proven search demand." howToUse={["Enter your seed keyword", "Click Get Suggestions", "Browse Google-like suggestions", "Click any suggestion to copy", "Use to expand your keyword list"]} features={["20+ Autocomplete Suggestions", "Real Search Patterns", "Google-Style UI", "Copy All Feature", "Keyword Expansion"]} faqs={[{ question: "What is Google autocomplete?", answer: "Google autocomplete predicts search queries based on popular searches. These suggestions represent real user behavior and are excellent keyword opportunities." }]} relatedTools={[{ name: "Question Keywords", emoji: "❓", path: "/tools/question-keywords" }, { name: "Related Keywords", emoji: "🔗", path: "/tools/related-keywords" }]} />
+            <div className="my-12">
+                <SEOSection 
+                    title="Keyword Suggestion Tool" 
+                    subtitle="Expand Your Search Reach" 
+                    description="Our Keyword Suggestion Tool helps you identify the exact terms people use during their search journey. By analyzing popular search patterns, we provide a list of relevant terms that can help you improve your content's visibility." 
+                    howToUse={["Enter your seed keyword", "Click Get Suggestions", "Review the generated list of related terms", "Click any suggestion to copy", "Incorporate these terms into your content strategy"]} 
+                    features={["20+ Relevant Suggestions", "Search-Driven Patterns", "Clean User Interface", "Instant Copy Feature", "Strategic Keyword Expansion"]} 
+                    faqs={[{ question: "What are search suggestions?", answer: "Search suggestions are predicted terms that appear when a user starts typing. They represent common queries and are highly valuable for understanding user intent." }]} 
+                    relatedTools={[{ name: "Question Keywords", emoji: "❓", path: "/tools/question-keyword" }, { name: "Related Keywords", emoji: "🔗", path: "/tools/related-keywords" }]} 
+                />
+            </div>
         </div>
     );
 };
-export default GoogleSuggestScraper;
+
+export default KeywordSuggestionTool;

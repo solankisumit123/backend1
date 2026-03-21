@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Hash } from "lucide-react";
+import ToolIcon from "@/components/ToolIcon";
 
 const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
 const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
@@ -36,7 +38,7 @@ const NumberToWords = () => {
                 <ArrowLeft className="w-4 h-4" /> Back to Tools
             </Link>
             <div className="text-center mb-8">
-                <div className="text-5xl mb-3">🔢</div>
+                <ToolIcon icon={Hash} color="bg-comic-purple" size="lg" className="mx-auto mb-4" />
                 <h1 className="comic-heading text-4xl text-foreground mb-2">Number to Words</h1>
                 <p className="text-muted-foreground font-bold">Convert numbers to English words — supports Indian system (Lakh, Crore)</p>
             </div>

@@ -50,10 +50,10 @@ const YouTubeKeywordTool = () => {
             </div>
 
             <div className="bg-card border-4 border-border rounded-2xl p-6 shadow-lg mb-6">
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                     <input value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && generate()}
                         placeholder="Enter niche/topic (e.g. cooking)" className="flex-1 border-2 border-border rounded-xl px-4 py-3 bg-background text-foreground font-bold focus:outline-none focus:border-comic-red" />
-                    <button onClick={generate} className="bg-comic-red hover:bg-comic-red/90 text-white font-bold px-6 py-3 rounded-xl">Search</button>
+                    <button onClick={generate} className="bg-comic-red hover:bg-comic-red/90 text-white font-bold px-8 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center">Search</button>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-3">
                     {Object.keys(ytKeywords).map(k => (

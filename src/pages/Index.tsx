@@ -5,7 +5,8 @@ import {
   Shield, Rocket, CheckCircle, ArrowRight, Mail, Award,
   Eye, MousePointer, Clock, ChevronRight, Facebook, Instagram, Twitter, Send,
   MessageSquare, Video, Cloud, Layout, Github, Linkedin,
-  Link2, Key, Lock, FileEdit, Map, LineChart, Youtube, HelpCircle, Calculator
+  Link2, Key, Lock, FileEdit, Map, LineChart, Youtube, HelpCircle, Calculator,
+  FilePlus2, DollarSign, CheckCircle2
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import SEOHead from "@/components/SEO/SEOHead";
@@ -51,14 +52,14 @@ function StatCard({ value, suffix, label, icon: Icon, color }: {
   const { ref, inView } = useInView();
   const count = useCounter(value, 2000, inView);
   return (
-    <div ref={ref} className="liquid-card flex flex-col items-center text-center p-8 rounded-[2.5rem] group hover:scale-105 transition-all duration-700">
-      <div className={`p-4 rounded-2xl bg-white/10 ${color} mb-4 group-hover:bg-white group-hover:shadow-xl transition-all duration-700`}>
-        <Icon className="w-10 h-10" strokeWidth={2.5} />
+    <div ref={ref} className="liquid-card flex flex-col items-center text-center p-5 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] group hover:scale-105 transition-all duration-700">
+      <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 ${color} mb-3 sm:mb-4 group-hover:bg-white group-hover:shadow-xl transition-all duration-700`}>
+        <Icon className="w-8 h-8 sm:w-10 h-10" strokeWidth={2.5} />
       </div>
-      <div className={`text-5xl font-[900] ${color} leading-none mb-2 tracking-tighter`}>
+      <div className={`text-3xl sm:text-5xl font-[900] ${color} leading-none mb-2 tracking-tighter`}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm font-black text-secondary/40 uppercase tracking-widest">{label}</div>
+      <div className="text-[10px] sm:text-sm font-black text-secondary/40 uppercase tracking-widest">{label}</div>
     </div>
   );
 }
@@ -106,7 +107,7 @@ const popularTools = [
   { icon: Map, name: "Sitemap Gen", path: "/tools/sitemap", badge: "FREE", color: "from-sky-500 to-blue-400", desc: "Create perfect XML sitemaps to help Google index your pages faster." },
   { icon: HelpCircle, name: "FAQ Generator", path: "/tools/faq-generator", badge: "NEW", color: "from-indigo-500 to-purple-400", desc: "Create SEO-friendly FAQ schemas to dominate Google rich snippets." },
   { icon: BarChart3, name: "Traffic Checker", path: "/tools/traffic-checker", badge: "FREE", color: "from-violet-500 to-purple-400", desc: "Get accurate estimates of monthly visitors and ranking trends." },
-  { icon: Video, name: "Video Downloader", path: "/tools/youtube-video-downloader", badge: "BETA", color: "from-red-500 to-orange-500", desc: "Download videos from YouTube and Instagram in high quality." },
+
 ];
 
 /* ─── Testimonials ─── */
@@ -161,9 +162,9 @@ const Index = () => {
   return (
     <div className="w-full flex flex-col items-center relative overflow-hidden px-4 md:px-8">
       <SEOHead
-        title="WebInsight Pro | 500+ Online Tools - Video, PDF, Finance, SEO, AI & Dev Hub"
-        description="WebInsight Pro: The world's largest collection of 500+ free online tools. Download YouTube & Instagram videos, merge PDF, calculate GST/SIP, audit SEO, generate passwords, format JSON, and use AI utilities."
-        keywords="free online tools, webinsight pro, youtube video downloader 4k, instagram reels downloader, facebook video downloader free, merge pdf online, split pdf, compress pdf without losing quality, pdf to jpg, pdf to word, gst calculator india, sip calculator with growth, emi calculator for home loan, income tax calculator fy 2025-26, lumpsum investment calculator, seo audit tool free, keyword density checker, backlink analyzer, serp checker, google rank tracker, qr code generator with logo, secure password generator, bmi calculator for men and women, age calculator by date of birth, unit converter online, word counter with character count, json formatter and validator, base64 to image, url decoder encoder, html css js minifier, sitemap generator xml, robot.txt generator, meta tag generator for seo, schema markup generator, compound interest calculator monthly, salary calculator, retirement planner, image resizer, background remover, slogan generator, blog topic ideas, ai content generator, lorem ipsum generator, percentage calculator, typing speed test online"
+        title="WebInsight Pro | 500+ Online Tools - PDF, Finance, SEO, AI & Dev Hub"
+        description="WebInsight Pro: The world's largest collection of 100+ free online tools. Calculate GST/SIP, audit SEO, generate passwords, format JSON, and use AI utilities."
+        keywords="free online tools, webinsight pro, merge pdf online, split pdf, compress pdf, gst calculator india, sip calculator, emi calculator, income tax calculator, seo audit tool free, keyword density checker, backlink analyzer, serp checker, qr code generator, password generator, bmi calculator, age calculator, unit converter, word counter"
         schemaData={{
           "@context": "https://schema.org",
           "@graph": [
@@ -198,49 +199,29 @@ const Index = () => {
       {/* ── HERO SECTION ── */}
       <section className="w-full max-w-[1500px] flex flex-col lg:flex-row items-center gap-16 py-20 lg:py-32">
         {/* Left Content */}
-        <div className="flex-1 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-xs tracking-widest uppercase mb-8 animate-fade-in text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left z-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-black text-[10px] sm:text-xs tracking-widest uppercase mb-8 animate-fade-in mx-auto lg:mx-0">
             <Zap className="w-4 h-4" /> Trusted by 100,000+ users worldwide
           </div>
-          <h1 className="text-[4rem] md:text-[6.5rem] font-[900] leading-[0.9] tracking-[-0.04em] text-secondary mb-10 animate-fade-in text-center lg:text-left">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-[900] leading-[1.1] sm:leading-[0.9] tracking-[-0.04em] text-secondary mb-10 animate-fade-in text-center lg:text-left">
             WebInsight <br />
-            Pro <span className="text-primary">& Tools</span>
+            Pro <span className="text-primary">& Free Tools</span>
+            <span className="inline-block align-top ml-4 sm:ml-6 -mt-3 sm:-mt-6">
+              <span className="text-sm sm:text-2xl bg-comic-red text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl shadow-[6px_6px_0_#000] rotate-12 inline-block font-black border-[3px] sm:border-[5px] border-secondary tracking-tighter">
+                2026
+              </span>
+            </span>
           </h1>
-          <p className="text-secondary/60 font-medium text-lg lg:text-xl max-w-xl mb-12 leading-relaxed animate-fade-in text-center lg:text-left" style={{ animationDelay: '200ms' }}>
-            Elevate your workflow with WebInsight Pro. Access 500+ premium utilities 
-            covering SEO, Finance, PDF management, and Social Media—all in one 
+          <p className="text-secondary/60 font-medium text-base sm:text-lg lg:text-xl max-w-xl mb-12 leading-relaxed animate-fade-in mx-auto lg:mx-0" style={{ animationDelay: '200ms' }}>
+            Elevate your workflow with WebInsight Pro. Access 500+ premium utilities
+            covering SEO, Finance, PDF management, and Social Media—all in one
             lightning-fast interface.
           </p>
 
-          <div className="w-full max-w-2xl mb-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
-            <form 
-              onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const query = formData.get("search") as string;
-                if (query) window.location.href = `/tools?q=${encodeURIComponent(query)}`;
-              }}
-              className="flex w-full bg-white/40 backdrop-blur-3xl border-4 border-secondary rounded-[2.5rem] p-2.5 shadow-[0_20px_0_rgba(0,0,0,0.1)] focus-within:shadow-[0_10px_0_rgba(0,0,0,0.05)] transition-all"
-            >
-              <div className="flex-shrink-0 flex items-center pl-6">
-                <Search className="w-7 h-7 text-secondary/40" />
-              </div>
-              <input 
-                name="search"
-                type="text" 
-                placeholder="Search for tools (e.g. YouTube, PDF, GST)..."
-                className="flex-1 bg-transparent px-6 text-secondary placeholder-secondary/30 outline-none w-full font-black text-xl" 
-              />
-              <button type="submit" className="bg-primary text-white px-10 py-5 rounded-[1.8rem] font-black shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-3">
-                SEARCH <ArrowRight className="w-6 h-6" />
-              </button>
-            </form>
-          </div>
-
-          <div className="flex gap-6 items-center animate-fade-in ml-2">
+          <div className="flex gap-4 sm:gap-6 items-center justify-center lg:justify-start animate-fade-in mb-12">
             {[Github, Twitter, Linkedin, Mail].map((Icon, idx) => (
-              <a key={idx} href="#" className="p-4 bg-white/30 backdrop-blur-2xl border border-white/40 rounded-full text-secondary/60 hover:text-primary hover:bg-white hover:shadow-[0_15px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
-                <Icon className="w-6 h-6" />
+              <a key={idx} href="#" className="p-3 sm:p-4 bg-white/30 backdrop-blur-2xl border border-white/40 rounded-full text-secondary/60 hover:text-primary hover:bg-white hover:shadow-[0_15px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+                <Icon className="w-5 h-5 sm:w-6 h-6" />
               </a>
             ))}
           </div>
@@ -248,39 +229,39 @@ const Index = () => {
 
         {/* Right Illustration - Medium Fixed Size */}
         <div className="flex-1 w-full flex justify-center lg:justify-end animate-scale-in relative px-4 lg:pr-12">
-          <div className="relative w-[550px] aspect-square">
-            <div className="w-full h-full animate-float-complex relative z-10 overflow-hidden rounded-[4rem] shadow-[0_30px_70px_rgba(0,0,0,0.1)] bg-white/10 backdrop-blur-md border border-white/30">
-               <img 
-                 src="/illustration.png" 
-                 alt="3D Analytics Illustration" 
-                 className="w-full h-full object-cover" 
-               />
-               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent pointer-events-none"></div>
+          <div className="relative w-full max-w-[500px] aspect-square">
+            <div className="w-full h-full animate-float-complex relative z-10 overflow-hidden rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_30px_70px_rgba(0,0,0,0.1)] bg-white/10 backdrop-blur-md border border-white/30">
+              <img
+                src="/illustration.png"
+                alt="3D Analytics Illustration"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent pointer-events-none"></div>
             </div>
 
-            {/* Floating Badges - Balanced for medium scale */}
-            <div className="absolute top-[5%] left-[-12%] p-6 bg-white/60 backdrop-blur-2xl rounded-[2.5rem] border border-white/50 animate-float-slow z-20 shadow-2xl flex items-center justify-center">
-               <Cloud className="w-9 h-9 text-sky-400" />
+            {/* Floating Badges - Reduced size for mobile */}
+            <div className="absolute top-[5%] left-[-8%] sm:left-[-12%] p-3 sm:p-6 bg-white/60 backdrop-blur-2xl rounded-2xl sm:rounded-[2.5rem] border border-white/50 animate-float-slow z-20 shadow-2xl flex items-center justify-center">
+              <Cloud className="w-6 h-6 sm:w-9 h-9 text-sky-400" />
             </div>
-            <div className="absolute top-[25%] right-[-8%] p-8 bg-white/60 backdrop-blur-2xl rounded-[3rem] border border-white/50 animate-float-fast z-20 shadow-2xl flex flex-col items-center">
-               <Layout className="w-11 h-11 text-primary" />
+            <div className="absolute top-[25%] right-[-5%] sm:right-[-8%] p-4 sm:p-8 bg-white/60 backdrop-blur-2xl rounded-3xl sm:rounded-[3rem] border border-white/50 animate-float-fast z-20 shadow-2xl flex flex-col items-center">
+              <Layout className="w-7 h-7 sm:w-11 h-11 text-primary" />
             </div>
-            <div className="absolute bottom-[15%] left-[0%] p-10 bg-white/60 backdrop-blur-2xl rounded-[3.5rem] border border-white/50 animate-float z-20 shadow-2xl flex flex-col items-center">
-               <MessageSquare className="w-12 h-12 text-green-500" />
+            <div className="absolute bottom-[15%] left-[-2%] sm:left-[0%] p-5 sm:p-10 bg-white/60 backdrop-blur-2xl rounded-[2rem] sm:rounded-[3.5rem] border border-white/50 animate-float z-20 shadow-2xl flex flex-col items-center">
+              <MessageSquare className="w-8 h-8 sm:w-12 h-12 text-green-500" />
             </div>
-            <div className="absolute top-[-5%] right-[15%] p-5 bg-white/60 backdrop-blur-2xl rounded-[2rem] border border-white/50 animate-float-slow z-20 shadow-2xl">
-               <Video className="w-8 h-8 text-pink-500" />
+            <div className="absolute top-[-5%] right-[15%] p-3 sm:p-5 bg-white/60 backdrop-blur-2xl rounded-xl sm:rounded-[2rem] border border-white/50 animate-float-slow z-20 shadow-2xl">
+              <Video className="w-5 h-5 sm:w-8 h-8 text-pink-500" />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── STATS SECTION ── */}
-      <div className="w-full max-w-6xl mb-32 animate-fade-in relative z-10 px-6" style={{ animationDelay: '400ms' }}>
-        <h2 className="text-4xl font-black text-center text-secondary mb-16 tracking-tight">
+      <div className="w-full max-w-6xl mb-32 animate-fade-in relative z-10 px-4 sm:px-6" style={{ animationDelay: '400ms' }}>
+        <h2 className="text-3xl sm:text-4xl font-black text-center text-secondary mb-12 sm:mb-16 tracking-tight">
           📈 Data-Driven Results
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           <StatCard value={150000} suffix="+" label="Tasks Processed" icon={Eye} color="text-primary" />
           <StatCard value={25000} suffix="+" label="Daily Active Users" icon={Users} color="text-secondary" />
           <StatCard value={500} suffix="+" label="Premium Utilities" icon={Zap} color="text-accent" />
@@ -299,47 +280,102 @@ const Index = () => {
             Browse All 500+ Tools <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
           {popularTools.map((tool, i) => (
             <Link
               key={i}
               to={tool.path}
-              className="premium-tool-card group relative p-10 flex flex-col h-full bg-white/40 dark:bg-black/20 backdrop-blur-2xl border border-white/60 dark:border-white/10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] transition-all duration-700 hover:-translate-y-4 hover:border-primary/30"
+              className="premium-tool-card group relative p-6 sm:p-10 flex flex-col h-full bg-white/40 dark:bg-black/20 backdrop-blur-2xl border border-white/60 dark:border-white/10 rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] transition-all duration-700 hover:-translate-y-4 hover:border-primary/30"
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <div className={`w-20 h-20 bg-gradient-to-br ${tool.color} rounded-[1.75rem] flex items-center justify-center text-white mb-8 shadow-2xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 transform-gpu`}>
-                <tool.icon className="w-10 h-10" strokeWidth={2.5} />
-                <div className="absolute inset-0 bg-white/20 rounded-[1.75rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className={`w-16 h-16 sm:w-20 h-20 bg-gradient-to-br ${tool.color} rounded-2xl sm:rounded-[1.75rem] flex items-center justify-center text-white mb-6 sm:mb-8 shadow-2xl shadow-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 transform-gpu`}>
+                <tool.icon className="w-8 h-8 sm:w-10 h-10" strokeWidth={2.5} />
+                <div className="absolute inset-0 bg-white/20 rounded-2xl sm:rounded-[1.75rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
-              
-              <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-2xl font-black text-secondary group-hover:text-primary transition-colors">
+
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <h3 className="text-xl sm:text-2xl font-black text-secondary group-hover:text-primary transition-colors">
                   {tool.name}
                 </h3>
-                <span className={`text-[10px] font-black px-3 py-1 rounded-lg border tracking-widest uppercase ${
-                  tool.badge === "PRO" 
-                    ? "bg-primary text-white border-primary" 
-                    : tool.badge === "NEW"
-                      ? "bg-purple-500 text-white border-purple-500"
-                      : "bg-white/50 text-secondary/60 border-secondary/20"
-                }`}>
+                <span className={`text-[8px] sm:text-[10px] font-black px-2 sm:px-3 py-1 rounded-lg border tracking-widest uppercase ${tool.badge === "PRO"
+                  ? "bg-primary text-white border-primary"
+                  : tool.badge === "NEW"
+                    ? "bg-purple-500 text-white border-purple-500"
+                    : "bg-white/50 text-secondary/60 border-secondary/20"
+                  }`}>
                   {tool.badge}
                 </span>
               </div>
-              
-              <p className="text-secondary/50 font-bold text-sm leading-relaxed mb-8 flex-1">
+
+              <p className="text-secondary/50 font-bold text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8 flex-1">
                 {tool.desc}
               </p>
 
-              <div className="flex items-center justify-between pt-6 border-t border-secondary/5">
-                <span className="text-secondary/30 text-xs font-black tracking-widest uppercase">Analyze Now</span>
-                <div className="w-10 h-10 rounded-full bg-secondary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:translate-x-2">
-                  <ArrowRight className="w-5 h-5" />
+              <div className="flex items-center justify-between pt-5 sm:pt-6 border-t border-secondary/5">
+                <span className="text-secondary/30 text-[10px] sm:text-xs font-black tracking-widest uppercase">Analyze Now</span>
+                <div className="w-8 h-8 sm:w-10 h-10 rounded-full bg-secondary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:translate-x-2">
+                  <ArrowRight className="w-4 h-4 sm:w-5 h-5" />
                 </div>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* ── PILLAR HUBS (SEO Strategy Expansion) ── */}
+        <div className="w-full max-w-[1500px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-24">
+
+          {/* PDF Pillar */}
+          <div className="comic-card border-4 border-secondary p-8 hover:-rotate-1 transition-transform bg-comic-blue/5">
+            <div className="w-16 h-16 bg-comic-red rounded-2xl border-4 border-secondary flex items-center justify-center mb-6 shadow-[4px_4px_0_#000]">
+              <FilePlus2 className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-3xl font-black mb-4 uppercase">PDF Solution <span className="text-comic-red">Hub</span></h2>
+            <p className="text-secondary/70 font-bold mb-6 italic">Manage all your PDF documents in one click. Completely secure browser-side processing.</p>
+            <ul className="space-y-3 mb-8">
+              {["Merge PDF Online", "Split & Extract Pages", "PDF to Word Converter", "Compress PDF Size"].map((item, idx) => (
+                <li key={idx} className="flex gap-2 items-center font-black text-sm text-secondary/80">
+                  <CheckCircle2 className="w-4 h-4 text-comic-green" /> {item}
+                </li>
+              ))}
+            </ul>
+            <Link to="/tools/pdf-tools" className="comic-btn w-full text-center bg-comic-red text-white py-4">Explore PDF Tools</Link>
+          </div>
+
+          {/* SEO Pillar */}
+          <div className="comic-card border-4 border-secondary p-8 hover:rotate-1 transition-transform bg-comic-green/5">
+            <div className="w-16 h-16 bg-comic-blue rounded-2xl border-4 border-secondary flex items-center justify-center mb-6 shadow-[4px_4px_0_#000]">
+              <TrendingUp className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-3xl font-black mb-4 uppercase">SEO Power <span className="text-comic-blue">Tools</span></h2>
+            <p className="text-secondary/70 font-bold mb-6 italic">Audit, track, and rank. Everything a professional marketer needs to grow traffic.</p>
+            <ul className="space-y-3 mb-8">
+              {["Website SEO Audit", "Real-Time Traffic Checker", "Keyword Density Analyzer", "Backlink Profile Check"].map((item, idx) => (
+                <li key={idx} className="flex gap-2 items-center font-black text-sm text-secondary/80">
+                  <CheckCircle2 className="w-4 h-4 text-comic-green" /> {item}
+                </li>
+              ))}
+            </ul>
+            <Link to="/tools" className="comic-btn w-full text-center bg-comic-blue text-white py-4">Open SEO Suite</Link>
+          </div>
+
+          {/* Finance Pillar */}
+          <div className="comic-card border-4 border-secondary p-8 hover:-rotate-1 transition-transform bg-comic-orange/5">
+            <div className="w-16 h-16 bg-comic-green rounded-2xl border-4 border-secondary flex items-center justify-center mb-6 shadow-[4px_4px_0_#000]">
+              <DollarSign className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-3xl font-black mb-4 uppercase">Finance <span className="text-comic-green">Calculators</span></h2>
+            <p className="text-secondary/70 font-bold mb-6 italic">Accurate financial planning for 2026. GST, Tax, and Investment calculators.</p>
+            <ul className="space-y-3 mb-8">
+              {["GST Calculator India", "Old vs New Income Tax", "SIP Return Planner", "Monthly EMI Calculator"].map((item, idx) => (
+                <li key={idx} className="flex gap-2 items-center font-black text-sm text-secondary/80">
+                  <CheckCircle2 className="w-4 h-4 text-comic-green" /> {item}
+                </li>
+              ))}
+            </ul>
+            <Link to="/tools" className="comic-btn w-full text-center bg-comic-green text-white py-4">Calculate Now</Link>
+          </div>
+
         </div>
       </div>
 
@@ -435,7 +471,7 @@ const Index = () => {
         <p>For programmers, web designers, and system administrators: minify CSS & JavaScript, format JSON, generate cron expressions, check HTTP status codes, convert Markdown to HTML, create CSS gradients, generate color palettes, encode/decode Base64 & URLs, check SSL certificates, perform DNS & IP lookups, and much more. All tools process your data directly in your browser for maximum security.</p>
 
         <h3 className="text-2xl font-black mt-8 mb-4">✍️ Content & Writing Tools</h3>
-        <p>Create better content with our <strong>Grammar Checker</strong>, <strong>Article Rewriter</strong>, <strong>Readability Score Checker</strong>, and <strong>Fancy Text Generator</strong>. Perfect your SEO content strategy with keyword-optimized, highly readable articles that rank on Google.</p>
+        <p>Create better content with our <strong>Grammar Checker</strong>, <strong>Paraphrasing Tool</strong>, <strong>Readability Score Checker</strong>, and <strong>Fancy Text Generator</strong>. Perfect your SEO content strategy with keyword-optimized, highly readable articles that rank on Google.</p>
 
         <h3 className="text-2xl font-black mt-8 mb-4">📈 How to Improve Website Ranking — SEO Guide 2026</h3>
         <p className="mb-4">Want to scale to <strong>1 million daily visitors</strong>? Read our complete <Link to="/seo-strategy" className="text-primary font-black hover:underline">SEO Strategy for 1M Daily Visitors</Link> — a 4-phase roadmap covering technical SEO, content, backlinks, and scalability.</p>
@@ -461,7 +497,7 @@ const Index = () => {
 
         <p className="mt-8 pt-6 border-t font-bold"><em>Bookmark this page now! All tools work on Desktop and Mobile with no installation required. Use our free SEO tools to check your website SEO, improve page speed, analyze backlinks, research keywords, and dominate search engine rankings in 2026.</em></p>
 
-        <p className="mt-4 text-sm text-muted-foreground">Related searches: free seo tools online, online seo checker, website traffic checker, seo analyzer free, seo score checker, backlinks checker free, keyword research tool free, website performance checker, page speed test tool, seo audit tools, rank tracker free, organic traffic estimator, free digital marketing tools, online optimization tools, how to check website seo free, free tools to improve website ranking, best seo audit tools 2026, how to increase organic traffic step by step, free keyword research and analysis tool, on-page seo checklist for beginners, how to get free backlinks for website, website seo performance report free, seo tips for small business websites, what is seo tools and why use them, free seo strategies for startups, step by step seo guide for beginners, seo trends in 2026.</p>
+
       </div>
 
       {/* ── FAQ Section with Schema ── */}
